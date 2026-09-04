@@ -142,6 +142,42 @@
   .decide .dbody{font-size:13px;color:var(--ink);line-height:1.55;}
   .decide .doption{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:6px;font-size:12.5px;}
   .decide .doption b{color:var(--hr);}
+
+  /* v9 mobile overflow guard */
+  html,body{overflow-x:hidden;max-width:100%;}
+  *{box-sizing:border-box;}
+  .wrap,.card,.hero,.changelog,.settle,.note,.stay,.daybox,.coursebox{max-width:100%;overflow-wrap:break-word;word-break:break-word;}
+  table{table-layout:fixed;width:100%;}
+  td,th{overflow-wrap:anywhere;word-break:break-word;}
+  .settle td.amt{white-space:normal;overflow-wrap:anywhere;}
+  a{overflow-wrap:anywhere;}
+  @media(max-width:560px){
+    body{padding:16px 10px;}
+    .hero h1{font-size:21px;}
+    .stay-grid{grid-template-columns:1fr;}
+    h2{font-size:16px;}
+    table{font-size:12.5px;}
+  }
+
+  /* v9 mobile overflow guard */
+  html,body{overflow-x:hidden;max-width:100%;}
+  *{box-sizing:border-box;}
+  .wrap,.card,.hero,.changelog,.settle,.note,.stay,.daybox,.coursebox{max-width:100%;overflow-wrap:break-word;word-break:break-word;}
+  table{table-layout:fixed;width:100%;}
+  td,th{overflow-wrap:anywhere;word-break:break-word;}
+  .settle td.amt{white-space:normal;overflow-wrap:anywhere;}
+  a{overflow-wrap:anywhere;}
+  .flight,.stay-grid,.chips,.maplegend,.checklist{min-width:0;}
+  .flight>*,.stay-grid>*,.chips>*{min-width:0;max-width:100%;}
+  .chip{white-space:normal;}
+  td.d{white-space:normal;}
+  @media(max-width:560px){
+    body{padding:16px 10px;}
+    .hero h1{font-size:21px;}
+    .stay-grid{grid-template-columns:1fr;}
+    h2{font-size:16px;}
+    table{font-size:12.5px;}
+  }
 </style>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 </head>
