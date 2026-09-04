@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>크로아티아·슬로베니아 여행 일정 2026.09 (v9 · 주소·연락처·현지정보 총정리)</title>
+<style>
+  :root{
+    --hr:#c8102e; --si:#0b4ea2; --ink:#1b2733; --muted:#6b7a8d;
+    --bg:#f4f6f9; --card:#ffffff; --line:#e4e9f0; --accent:#0e7c66;
+    --gold:#b8860b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+    padding:24px 14px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+  .hero{
+    background:linear-gradient(135deg,var(--hr) 0%,#8a0c20 45%,var(--si) 100%);
+    color:#fff;border-radius:18px;padding:30px 26px;box-shadow:0 10px 30px rgba(11,78,162,.18);
+    position:relative;overflow:hidden;
+  }
+  .hero:after{content:"🧳";position:absolute;right:22px;top:18px;font-size:44px;opacity:.35;}
+  .hero .flag{font-size:26px;letter-spacing:2px;}
+  .hero h1{font-size:26px;margin:6px 0 4px;font-weight:800;line-height:1.25;}
+  .hero .sub{font-size:14px;opacity:.95;}
+  .hero .chips{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;}
+  .chip{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+    padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;backdrop-filter:blur(4px);}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px;margin-top:18px;box-shadow:0 3px 10px rgba(27,39,51,.04);
+  }
+  h2{font-size:18px;display:flex;align-items:center;gap:8px;margin-bottom:14px;color:var(--ink);}
+  h2 .bar{width:5px;height:20px;border-radius:3px;background:var(--hr);display:inline-block;}
+  h2.si .bar{background:var(--si);}
+  table{width:100%;border-collapse:collapse;font-size:14px;}
+  th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:#f7f9fc;color:var(--muted);font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:.3px;}
+  td.d{font-weight:800;white-space:nowrap;color:var(--hr);}
+  tr:last-child td{border-bottom:none;}
+  .flight{display:flex;gap:14px;flex-wrap:wrap;}
+  .flight .fbox{flex:1;min-width:230px;background:#f7f9fc;border-radius:12px;padding:14px 16px;border:1px solid var(--line);}
+  .flight .fbox .lab{font-size:12px;color:var(--muted);font-weight:700;}
+  .flight .fbox .val{font-size:15px;font-weight:700;margin-top:3px;}
+  .route{
+    background:#f0f5ff;border:1px dashed var(--si);border-radius:12px;
+    padding:12px 14px;font-size:14px;font-weight:700;color:var(--si);text-align:center;margin-bottom:14px;
+  }
+  .spot{margin-bottom:16px;padding-bottom:14px;border-bottom:1px dashed var(--line);}
+  .spot:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .spot .head{font-size:15.5px;font-weight:800;margin-bottom:6px;}
+  .spot .head .day{color:var(--muted);font-weight:700;font-size:13px;}
+  .spot ul{margin:0 0 0 18px;font-size:13.8px;}
+  .spot ul li{margin:2px 0;}
+  .spot .why{margin-top:6px;font-size:13px;background:#fff7e6;border-left:3px solid var(--gold);padding:6px 10px;border-radius:4px;}
+  .spot .must{margin-top:6px;font-size:13px;background:#eefaf5;border-left:3px solid var(--accent);padding:6px 10px;border-radius:4px;color:#0a5f4d;}
+  .budget td.amt{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;}
+  .budget tr.total td{background:#eefaf5;font-weight:800;color:var(--accent);border-top:2px solid var(--accent);font-size:15px;}
+  .note{font-size:12.5px;color:var(--muted);margin-top:10px;padding-left:4px;}
+  .note li{margin:3px 0;list-style:none;}
+  .note li:before{content:"※ ";color:var(--hr);}
+  .stay-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  @media(max-width:560px){.stay-grid{grid-template-columns:1fr;}}
+  .stay{background:#f7f9fc;border:1px solid var(--line);border-radius:12px;padding:12px 14px;}
+  .stay.ok{background:linear-gradient(180deg,#eefaf5 0%,#f7f9fc 100%);border-color:var(--accent);}
+  .stay .area{font-weight:800;font-size:14px;}
+  .stay .meta{font-size:12.5px;color:var(--muted);margin-top:3px;}
+  .foot{text-align:center;color:var(--muted);font-size:12px;margin:22px 0 6px;}
+  .tag{display:inline-block;background:#eefaf5;color:var(--accent);font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-left:6px;}
+  .tag.new{background:#fff0f0;color:var(--hr);}
+  .tag.ok{background:#eefaf5;color:var(--accent);}
+  #map{height:460px;border-radius:14px;border:1px solid var(--line);margin-top:6px;z-index:0;}
+  .maplegend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:12.5px;color:var(--muted);}
+  .maplegend span{display:inline-flex;align-items:center;gap:5px;}
+  .dot{width:11px;height:11px;border-radius:50%;display:inline-block;}
+  .dot.hr{background:var(--hr);} .dot.si{background:var(--si);}
+  .pin{background:var(--hr);color:#fff;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.3);border:2px solid #fff;}
+  .pin.si{background:var(--si);}
+  .leaflet-popup-content{font-size:13px;line-height:1.5;} .leaflet-popup-content b{color:var(--hr);}
+
+  .changelog{background:#eefaf5;border:1px solid var(--accent);border-radius:12px;padding:14px 16px;margin-top:18px;}
+  .changelog h3{color:var(--accent);font-size:14px;font-weight:800;margin-bottom:6px;}
+  .changelog ul{margin-left:18px;font-size:13px;line-height:1.7;}
+  .changelog b{color:var(--hr);}
+
+  .booked-banner{background:linear-gradient(135deg,#eefaf5 0%,#f0f5ff 100%);border:1px solid var(--accent);border-radius:12px;padding:14px 16px;margin-top:18px;}
+  .booked-banner h3{color:var(--accent);font-size:14px;font-weight:800;margin-bottom:6px;}
+  .booked-banner .amt{font-size:22px;font-weight:800;color:var(--accent);}
+
+  .daybox{border-left:4px solid var(--hr);padding:8px 12px;margin:8px 0;background:#fff7f7;border-radius:6px;font-size:13.5px;}
+  .daybox.si{border-color:var(--si);background:#f0f5ff;}
+  .daybox b{color:var(--hr);}
+  .daybox.si b{color:var(--si);}
+
+  .coursebox{background:#fff;border:2px solid var(--accent);border-radius:12px;padding:14px 16px;margin-top:10px;}
+  .coursebox .ctitle{font-size:14.5px;font-weight:800;color:var(--accent);margin-bottom:6px;}
+  .coursebox .ctime{font-size:12.5px;color:var(--muted);margin-bottom:8px;}
+  .coursebox ol{margin-left:20px;font-size:13.5px;}
+  .coursebox ol li{margin:4px 0;}
+
+  /* 정산표 */
+  .settle{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:8px;}
+  .settle table{width:100%;font-size:13.5px;}
+  .settle th{background:#f0f5ff;color:var(--si);font-size:12px;padding:10px 8px;}
+  .settle td{padding:10px 8px;border-bottom:1px solid var(--line);}
+  .settle td.amt{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .settle tr.subtotal td{background:#f7f9fc;font-weight:800;color:var(--ink);border-top:2px solid var(--line);}
+  .settle tr.subtotal td.amt{color:var(--si);}
+  .settle tr.final td{background:linear-gradient(90deg,#eefaf5 0%,#f0f5ff 100%);font-weight:800;font-size:15px;color:var(--accent);border-top:2px solid var(--accent);}
+  .settle tr.final td.amt{color:var(--hr);font-size:16px;}
+  .settle .cat{color:var(--muted);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;padding:14px 8px 6px;background:#fafbfd;}
+  .settle .memo{background:#fffbea;font-size:12.5px;color:var(--muted);padding:10px 12px;border-top:1px solid var(--line);}
+  .settle .memo b{color:var(--gold);}
+
+  /* 체크리스트 & 의사결정 */
+  .checklist{display:grid;grid-template-columns:1fr;gap:8px;}
+  .check-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:#f7f9fc;border:1px solid var(--line);border-radius:10px;cursor:pointer;transition:all .2s;}
+  .check-item:hover{background:#f0f5ff;border-color:var(--si);}
+  .check-item.done{background:#eefaf5;border-color:var(--accent);}
+  .check-item .cbox{width:22px;height:22px;border:2px solid var(--muted);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;background:#fff;transition:all .2s;}
+  .check-item.done .cbox{background:var(--accent);border-color:var(--accent);}
+  .check-item.done .cbox:before{content:"✓";}
+  .check-item.done .cbody{opacity:.65;text-decoration:line-through;text-decoration-color:var(--muted);}
+  .check-item .cbody{flex:1;font-size:13.5px;line-height:1.5;}
+  .check-item .ctitle{font-weight:800;color:var(--ink);}
+  .check-item .cmeta{font-size:12px;color:var(--muted);margin-top:2px;}
+  .check-item .curgent{display:inline-block;background:var(--hr);color:#fff;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:5px;margin-left:6px;vertical-align:middle;}
+  .check-item .curgent.med{background:var(--gold);}
+  .check-item .curgent.low{background:var(--muted);}
+  .check-item .curgent.ok-tag{background:var(--accent);}
+  .check-item a{color:var(--si);font-weight:700;}
+  .cprog{background:#f0f5ff;border:1px solid var(--si);border-radius:10px;padding:10px 14px;margin-bottom:12px;font-size:13.5px;font-weight:700;color:var(--si);display:flex;justify-content:space-between;align-items:center;}
+  .cprog .cbar{flex:1;margin:0 12px;height:8px;background:rgba(11,78,162,.2);border-radius:6px;overflow:hidden;}
+  .cprog .cbar>div{height:100%;background:var(--si);transition:width .3s;}
+
+  /* 의사결정 */
+  .decide{background:#fffbea;border:1px solid var(--gold);border-radius:10px;padding:12px 14px;margin-bottom:8px;}
+  .decide .dtitle{font-size:14px;font-weight:800;color:var(--gold);margin-bottom:4px;}
+  .decide .dbody{font-size:13px;color:var(--ink);line-height:1.55;}
+  .decide .doption{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:6px;font-size:12.5px;}
+  .decide .doption b{color:var(--hr);}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="flag">🇭🇷 &nbsp;🇸🇮</div>
+    <h1>크로아티아 · 슬로베니아 여행 일정 <span style="font-size:14px;background:rgba(255,255,255,.25);padding:3px 10px;border-radius:8px;vertical-align:middle;">v9 · 공개용(민감정보 마스킹)</span></h1>
+    <div class="sub">Infobip 출장 + 팀장님과 개인여행 연장 · 2026년 9월 · <b>숙소 4개 모두 확정</b></div>
+    <div class="chips">
+      <span class="chip">👥 2인</span>
+      <span class="chip">📅 9/6 출국 ~ 9/16 귀국</span>
+      <span class="chip">🚗 렌터카 원웨이</span>
+      <span class="chip">💧 플리트비체 국립공원</span>
+    </div>
+  </div>
+
+  <!-- v9 업데이트 -->
+  <div class="changelog" style="border-color:#c8102e;background:#fff0f0;">
+    <h3 style="color:#c8102e;">🧳 v9 · 출발 준비 완료본 · 주소·연락처·현지정보 총정리 (2026-09-04)</h3>
+    <ul>
+      <li>📍 <b>주요 주소 &amp; 연락처 카드 신규 추가</b> — 공항·호텔·숙소 정확한 주소 + 지도 링크 + 비상연락 한 곳에</li>
+      <li>🤖 <b>Vision AI Hospitality Agent 안내</b> — 24/7 챗봇 (일정·셔틀·숙소·이스트리아 가이드)</li>
+      <li>🇭🇷 <b>현지 실용정보 카드 추가</b> — 화폐(유로·현금)·팁·카드·크로아티아어 회화·현지 맛집/카페</li>
+      <li>✉️ Booklet &amp; Know-Before-You-Go 이메일 반영 · 드레스코드·비상연락 정리</li>
+      <li>🍽️ Istria 미쉐린/맛집·카페·바 추천 (Booklet 출처) 반영</li>
+    </ul>
+  </div>
+
+  <!-- v8 업데이트 -->
+  <div class="changelog" style="border-color:#0b4ea2;background:#f0f5ff;">
+    <h3 style="color:#0b4ea2;">🛫 v8 · Vision 행사 일정 반영 + 9/11 로빈 렌터카 픽업 (2026-09-03)</h3>
+    <ul>
+      <li>📧 <b>Infobip Vision 공식 이메일 수신 기반 업데이트</b></li>
+      <li>🚌 <b>9/7 공항 픽업:</b> 08:40 자그레브 공항 (권도성님 동반) · Greenway 차량 · 드라이버 대기 · 비상연락 Milana +385 99-3**-**** / Igor +385 91-7**-****</li>
+      <li>📅 <b>9/11 Vision 행사 일정 추가:</b> 08:45 호텔→Quantum 버스 → 오전 세션 → Pangea 런치 → Discover Istria (로빈 올드타운 투어 + 선셋 보트 크루즈)</li>
+      <li>🚗 <b>렌터카 픽업 위치 변경:</b> Pula 호텔 → <b>Rovinj 현지</b> (행사 버스에서 로빈 하차 후 픽업)</li>
+      <li>🏁 <b>9/11 행사 후 호텔 복귀 없음:</b> Discover Istria 종료 후 버스에서 로빈 하차 → 바로 숙소 체크인</li>
+      <li>⚠️ 로빈 숙소 체크인 창 15:00~20:00 · 행사 종료 시간(일몰 후 보트) 감안 시 <b>숙소에 늦은 도착 사전 고지 권장</b></li>
+    </ul>
+  </div>
+
+  <!-- v7 확정 배너 -->
+  <div class="changelog">
+    <h3>✅ v7 · 예매 완료 + 관통 코스 확정 (2026-08-14 15:12)</h3>
+    <ul>
+      <li>🎫 <b>플리트비체 입장권 예매 완료:</b> 9/12 (토) 15:00~16:00 · <b>Entrance 1(ST1) · 성인 2명 (Adults after 15h)</b> · €55.00 · <span style="color:#c8102e;font-weight:700;">티켓 규정상 변경·취소 불가 · 1회권</span> → ST1 진입 → 대폭포 → 전기보트 → 상호 → ST2 exit 관통 코스</li>
+      <li>🎫 <b>포스토이나 동굴 + 프레드야마 성 콤보 예매 완료:</b> 9/13 (일) 14:00 · AV 오디오가이드 포함 · <b>€102.80</b> · 주문번호 89****</li>
+      <li>~~🍝 Puntulina 레스토랑~~ <span style="color:var(--hr);font-weight:700;">❌ 취소</span> · 선셋 보트 크루즈와 시간 충돌 · 보트 후 올드타운 자유 디너로 변경</li>
+      <li>🏨 4개 숙소 모두 확정 · 총 결제 ₩973,599 (v6에서 이월)</li>
+    </ul>
+  </div>
+
+  <!-- 확정 예약 요약 -->
+  <div class="booked-banner">
+    <h3>💰 예매 현황 한눈에 보기</h3>
+    <div>숙소 4개 · 입장권 2건 · 레스토랑 1건 <b>모두 확정 ✅</b> · 숙소 총액 <span class="amt">₩973,599</span> + 입장권 <span class="amt">€157.80</span> + 레스토랑 현장결제</div>
+  </div>
+
+  <!-- 항공 -->
+  <!-- ===== v9 신규: 주요 주소 & 연락처 ===== -->
+  <div class="card">
+    <h2><span class="bar"></span>📍 주요 주소 &amp; 연락처 <span style="font-size:13px;color:var(--muted);font-weight:600;">· 탭하면 지도/전화 연결</span></h2>
+
+    <div style="font-size:12.5px;color:var(--muted);font-weight:700;margin:2px 0 8px;">✈️ 공항 · 행사 장소</div>
+    <div class="stay-grid">
+      <div class="stay">
+        <div class="area">🛬 자그레브 공항 (도착)</div>
+        <div class="meta">
+          Franjo Tuđman Airport (ZAG)<br>
+          Ul. Rudolfa Fizira 21, 10410 Velika Gorica<br>
+          <b>9/7 08:40 Greenway 픽업</b> · Arrivals 구역 드라이버 대기<br>
+          <a href="https://maps.google.com/?q=Franjo+Tudman+Airport+Zagreb" target="_blank">🗺️ 지도</a>
+        </div>
+      </div>
+      <div class="stay">
+        <div class="area">🏨 Park Plaza Histria (행사 호텔)</div>
+        <div class="meta">
+          Verudela 17, 52100 Pula, Croatia<br>
+          <b>9/7~11 · Infobip Vision · 회사 지원</b><br>
+          프런트 +385 52 590 000<br>
+          <a href="https://maps.google.com/?q=Park+Plaza+Histria+Pula" target="_blank">🗺️ 지도</a> · <a href="https://www.arenahotels.com/en/hotel/park-plaza-histria" target="_blank">🌐 홈페이지</a>
+        </div>
+      </div>
+      <div class="stay">
+        <div class="area">🏛️ Quantum (9/11 오전 세션)</div>
+        <div class="meta">
+          Infobip Campus, Vodnjan (풀라 근교)<br>
+          <b>08:45 호텔→Quantum 버스</b> · 오전 세션<br>
+          <a href="https://maps.google.com/?q=Infobip+Vodnjan+Croatia" target="_blank">🗺️ 지도</a>
+        </div>
+      </div>
+      <div class="stay">
+        <div class="area">🍴 Pangea (9/11 런치)</div>
+        <div class="meta">
+          Infobip Pangea, Vodnjan<br>
+          <b>오전 세션 후 런치</b> → Discover Istria 출발<br>
+          <a href="https://maps.google.com/?q=Pangea+Infobip+Vodnjan" target="_blank">🗺️ 지도</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-size:12.5px;color:var(--muted);font-weight:700;margin:14px 0 8px;">📞 비상 연락처 (필수 저장)</div>
+    <div class="settle">
+      <table>
+        <tr><th>구분</th><th>연락처</th></tr>
+        <tr><td>🚐 Greenway (공항 픽업 차량)</td><td class="amt"><a href="tel:+385955589000">+385 95-55-89-*** (Greenway)</a></td></tr>
+        <tr><td>👩‍💼 Vision Travel — Milana Zorić</td><td class="amt"><a href="#">+385 99-3**-****</a></td></tr>
+        <tr><td>👨‍💼 Vision Travel — Igor Ćebetarević</td><td class="amt"><a href="#">+385 91-7**-****</a></td></tr>
+        <tr><td>✉️ Infobip Vision 문의</td><td class="amt"><a href="mailto:vision@infobip.com">vision@infobip.com</a></td></tr>
+        <tr><td>👩‍💼 Erin Ko (Infobip 담당)</td><td class="amt"><a href="tel:+82 10-****-****">+82 10-****-****</a></td></tr>
+        <tr><td>🏨 로빈 숙소 (Irena) 예약</td><td class="amt">68******16 / PIN ****</td></tr>
+        <tr><td>🆘 응급 (크로아티아·유럽 공통)</td><td class="amt">112</td></tr>
+      </table>
+      <div class="memo"><b>※ Greenway 차량 지연 시</b> Milana 또는 Igor에게 즉시 연락 · 예약카드·여권은 항상 소지</div>
+    </div>
+
+    <div style="font-size:12.5px;color:var(--muted);font-weight:700;margin:14px 0 8px;">🏠 숙소 주소 (지도 바로가기)</div>
+    <div class="note">
+      <li>🇭🇷 로빈 · <b>Apartments and Rooms Irena</b> · Sebastiano Schiavone 1, 52210 Rovinj · <a href="https://maps.google.com/?q=Sebastiano+Schiavone+1+Rovinj" target="_blank">지도</a></li>
+      <li>🇭🇷 플리트비체 · <b>Hotel Jezero</b> · 53231 Plitvička Jezera · <a href="https://maps.google.com/?q=Hotel+Jezero+Plitvice" target="_blank">지도</a></li>
+      <li>🇸🇮 류블랴나 · <b>Boutique Apartments</b> · 시내 · <a href="https://maps.google.com/?q=Ljubljana+city+center" target="_blank">지도</a></li>
+      <li>🇭🇷 자그레브 · <b>아파트먼트 캅톨 (Apartman Kaptol)</b> · 도심 · <a href="https://maps.google.com/?q=Kaptol+Zagreb" target="_blank">지도</a></li>
+    </div>
+  </div>
+
+  <!-- ===== v9 신규: Vision AI Agent ===== -->
+  <div class="card" style="background:linear-gradient(135deg,#f0f5ff 0%,#eefaf5 100%);">
+    <h2 class="si"><span class="bar"></span>🤖 Vision AI Hospitality Agent <span style="font-size:13px;color:var(--muted);font-weight:600;">· 24/7 챗봇</span></h2>
+    <div style="font-size:13.8px;line-height:1.7;">
+      Infobip가 제공하는 <b>개인 AI 호스피탈리티 에이전트</b> — 행사 이메일의 QR코드를 스캔하면 연결됩니다. 아래 문의 가능:
+      <ul style="margin:8px 0 0 18px;">
+        <li>📅 행사 아젠다·세션·키노트·라운드테이블</li>
+        <li>🚌 이벤트 셔틀 스케줄 · 숙소 정보</li>
+        <li>🏞️ Discover Istria: Brijuni 국립공원·Motovun·Rovinj</li>
+        <li>🍽️ 현지 가이드 — 맛집·볼거리·숨은 명소</li>
+        <li>🔔 실시간 행사 업데이트·알림</li>
+      </ul>
+      <div style="margin-top:10px;font-size:12.5px;color:var(--muted);">※ QR코드는 Infobip Vision 이메일(Know Before You Go) 본문에 포함. 출발 전 휴대폰에 연결해두면 편리.</div>
+    </div>
+  </div>
+
+  <!-- ===== v9 신규: 현지 실용정보 ===== -->
+  <div class="card">
+    <h2><span class="bar"></span>🇭🇷 현지 실용정보 <span style="font-size:13px;color:var(--muted);font-weight:600;">· Booklet 기반</span></h2>
+
+    <div style="font-size:12.5px;color:var(--muted);font-weight:700;margin:2px 0 8px;">💶 화폐 · 결제</div>
+    <div class="note" style="margin-top:0;">
+      <li><b>통화: 유로(€)</b> — 크로아티아·슬로베니아 모두 유로 (크로아티아 2023.1.1 도입)</li>
+      <li><b>현금 필수</b> — 소도시·시장·로컬 바/카페는 <b>현금만</b> 받는 곳 많음. 항상 소지 권장</li>
+      <li>ATM은 도시·마을에 흔함 · 카드는 대부분 통용 (호텔·레스토랑·마트)</li>
+      <li><b>팁: 의무 아님</b> — 식당 서비스 좋으면 10% · 택시/호텔은 반올림 정도</li>
+    </div>
+
+    <div style="font-size:12.5px;color:var(--muted);font-weight:700;margin:14px 0 8px;">🍽️ Istria 맛집 · 카페 · 바 (Booklet 추천)</div>
+    <div class="note" style="margin-top:0;">
+      <li>⭐ <b>Restaurant Monte, Rovinj</b> — 크로아티아 최초 미쉐린 스타</li>
+      <li>☕ <b>Cvajner (Forum, Pula)</b> — 전망 좋은 카페 / <b>Caffe bar Piazza (Vodnjan)</b> / <b>Hotel Adriatic 카페 (Rovinj)</b> 바닷가</li>
+      <li>🍺 <b>Kampanjola (Svetvinčenat)</b> 크래프트 맥주 / <b>Vino Vigneto (Rovinj)</b> 와인바 / <b>Aura distillery (Pula)</b> 현지 증류주</li>
+      <li>🍷 로컬주: biska·teranino·medica·Pelinkovac · 맥주 Ožujsko·Karlovačko · 음료 Pašareta·Cedevita</li>
+      <li>🐕 트러플 헌팅 Karlić Tartufi · 와인 Kozlović · 올리브오일 Chiavalon (예약제)</li>
+    </div>
+
+    <div style="font-size:12.5px;color:var(--muted);font-weight:700;margin:14px 0 8px;">🗣️ 크로아티아어 한마디</div>
+    <div class="settle">
+      <table>
+        <tr><th>한국어</th><th>크로아티아어</th><th>발음</th></tr>
+        <tr><td>안녕하세요</td><td>Bok</td><td>보크</td></tr>
+        <tr><td>좋은 아침</td><td>Dobro jutro</td><td>도브로 유트로</td></tr>
+        <tr><td>감사합니다</td><td>Hvala</td><td>흐발라</td></tr>
+        <tr><td>부탁합니다</td><td>Molim</td><td>몰림</td></tr>
+        <tr><td>실례합니다</td><td>Oprostite</td><td>오프로스티테</td></tr>
+        <tr><td>커피 주세요</td><td>Molim kavu</td><td>몰림 카부</td></tr>
+        <tr><td>계산서요</td><td>Račun</td><td>라춘</td></tr>
+        <tr><td>환전 어디서 하나요?</td><td>Gdje mogu razmijeniti novac?</td><td>그졔 모구 라즈미예니티 노바츠</td></tr>
+      </table>
+      <div class="memo">☕ 커피 Kava · 와인 Vino · 생선 Riba · 맥주 Pivo · 저녁 Večera · 산책 Šetnja</div>
+    </div>
+
+    <div style="font-size:12.5px;color:var(--muted);font-weight:700;margin:14px 0 8px;">👔 드레스코드 (Vision 행사)</div>
+    <div class="note" style="margin-top:0;">
+      <li>주간 세션: <b>비즈니스 캐주얼</b></li>
+      <li>이브닝: <b>스마트 캐주얼/칵테일</b> · 수요일 저녁은 야외 로마 유적지 → 편한 신발·가벼운 재킷</li>
+      <li>야외 액티비티: 편한 복장·운동화</li>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="bar"></span>✈️ 항공</h2>
+    <div class="flight">
+      <div class="fbox">
+        <div class="lab">출국</div>
+        <div class="val">9/6 인천 → 이스탄불 경유</div>
+        <div class="val">→ 9/7 08:40 자그레브 도착</div>
+      </div>
+      <div class="fbox">
+        <div class="lab">귀국 (나)</div>
+        <div class="val">9/15 20:35 자그레브 출발</div>
+        <div class="val">→ 9/16 인천 도착</div>
+        <div class="lab" style="margin-top:8px;color:var(--hr);">귀국 (팀장님) · 오전 별도 출국</div>
+        <div class="val" style="font-size:13px;">항공편 시간 확인 필요 <span style="color:var(--muted);">(TBD)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 동선 지도 -->
+  <div class="card">
+    <h2 class="si"><span class="bar"></span>🗺️ 여행 동선 지도</h2>
+    <div id="map"></div>
+    <div class="maplegend">
+      <span><span class="dot hr"></span>🇭🇷 크로아티아</span>
+      <span><span class="dot si"></span>🇸🇮 슬로베니아</span>
+      <span>— 붉은 실선: 이동 경로</span>
+    </div>
+    <div class="note"><li>마커 번호 = 이동 순서 · 마커 클릭 시 지역·일정 팝업 표시</li></div>
+  </div>
+
+  <!-- 1부 출장 -->
+  <div class="card">
+    <h2><span class="bar"></span>🏢 1부. Infobip Vision 출장 <span style="font-size:13px;color:var(--muted);font-weight:600;">· 9/7~11 · 회사 지원</span></h2>
+    <table>
+      <tr><th style="width:90px;">날짜</th><th>내용</th><th>비고</th></tr>
+      <tr><td class="d">9/7 (월)</td><td>🚌 08:40 자그레브 공항 픽업 (권도성님 동반) · Greenway 차량 · 풀라 이동 → Park Plaza Histria 체크인</td><td>드라이버 Arrivals 대기 · Greenway +385 95-55-89-*** (Greenway)</td></tr>
+      <tr><td class="d">9/7~10</td><td>🇭🇷 Pula (풀라) · Infobip Vision 컨퍼런스</td><td>Park Plaza Histria — 회사 지원</td></tr>
+      <tr><td class="d">9/11 (금)</td><td>
+        <b>08:45</b> 호텔 → <b>Quantum</b> 버스 출발 (Vision 오전 세션)<br>
+        오전: Quantum 세션 · 오후: Pangea 런치<br>
+        <b>Discover Istria Experience:</b> 로컬 가이드와 <b>Rovinj</b> 올드타운 투어 · 골목길 탐방 · 자유시간<br>
+        일몰 무렵: <b>선셋 보트 크루즈</b> (로빈 해안)<br>
+        ✋ <b>버스 로빈 하차</b> (호텔 복귀 없음) → 렌터카 픽업 → 숙소 체크인
+      </td><td>드레스코드: 비즈니스 캐주얼 (오전) / 편한 복장·신발 (투어)</td></tr>
+    </table>
+    <div style="margin-top:10px;padding:10px 14px;background:#fff8e1;border:1px dashed var(--gold);border-radius:8px;font-size:12.5px;color:var(--ink);line-height:1.6;">
+      📋 <b>Vision 비상연락:</b> Milana Zorić <b>+385 99-3**-****</b> · Igor Ćebetarević <b>+385 91-7**-****</b> · 이메일 vision@infobip.com<br>
+      🚗 <b>출발 전 귀국편:</b> 회사 미제공 (개인 일정 연장) · 귀국 항공은 별도 처리
+    </div>
+  </div>
+
+  <!-- 2부 개인여행 (일자별 상세) -->
+  <div class="card">
+    <h2 class="si"><span class="bar"></span>🏖️ 2부. 개인여행 연장 <span style="font-size:13px;color:var(--muted);font-weight:600;">· 9/11~15 · 개인 부담</span></h2>
+    <div class="route">Pula → Rovinj → <b>Plitvice</b> → Postojna → Ljubljana → Bled → Zagreb</div>
+    <table>
+      <tr><th style="width:64px;">날짜</th><th>지역</th><th>주요 일정</th><th style="width:96px;">이동</th></tr>
+      <tr><td class="d">9/11 (금)</td><td>🇭🇷 로빈<br><small>Rovinj</small></td><td>Vision Discover Istria 투어 (행사 버스) → 로빈에서 버스 하차 → <b>로빈 현지 렌터카 픽업</b> → 숙소 체크인 · 아드리아 해안·올드타운·해산물 <span class="tag ok">숙박 확정</span></td><td>행사 버스 이동</td></tr>
+      <tr><td class="d">9/12 (토)</td><td>🇭🇷 로빈 → <b>플리트비체</b><br><small>Plitvice Lakes NP</small></td><td>오전 로빈 마무리 → 14:00 Hotel Jezero 체크인 → <b>15:00 ST1 진입 · 대폭포→보트→상호→ST2 exit</b> (~18:30) <span class="tag ok">티켓 확정</span></td><td>270km/3.5h</td></tr>
+      <tr><td class="d">9/13 (일)</td><td>🇭🇷 플리트비체 → 🇸🇮 포스토이나 → 류블랴나<br><small>Plitvice → Postojna → Ljubljana</small></td><td><b>07:00 개장 트레킹 (2~3h)</b> → 낮 포스토이나 동굴 → 저녁 류블랴나 <span class="tag ok">Boutique Apartments 확정</span></td><td>국경 1회<br>350km/4.5h</td></tr>
+      <tr><td class="d">9/14 (월)</td><td>🇸🇮 류블랴나 → 블레드 → 🇭🇷 자그레브<br><small>Ljubljana → Bled → Zagreb</small></td><td>오전 류블랴나 체크아웃 → <b>블레드 (플레트나·성·크림케이크)</b> → 자그레브 시내 <span class="tag ok">블레드 확정 · 아파트먼트 캅톨 확정</span></td><td>55+190km<br>~4h</td></tr>
+      <tr><td class="d">9/15 (화)</td><td>🇭🇷 자그레브<br><small>Zagreb</small></td><td><b>오전: 팀장님 먼저 공항 데려드림 · 출국 배웅</b> → 오전~오후 자그레브 시내 (혼자) → 렌터카 공항 반납 → <b>20:35 나 출국</b></td><td>30분×2</td></tr>
+    </table>
+  </div>
+
+  <!-- 일자별 상세 스케쥴 -->
+  <div class="card">
+    <h2><span class="bar"></span>🕐 일자별 상세 스케쥴</h2>
+
+    <div class="daybox">
+      <b>9/11 (금) · Vision 행사 + 로빈 하차 · 개인여행 시작</b>
+      <ul style="margin-left:16px;margin-top:4px;">
+        <li><b>아침: Park Plaza Histria에서 짐 챙기기</b> (출장 짐 → 렌터카 예정이므로 최대한 정리)</li>
+        <li><b>08:45 호텔 출발 버스 탑승</b> → Quantum (Vision 오전 세션)</li>
+        <li>오전: Quantum 세션 · 오후: Pangea 런치</li>
+        <li><b>오후 Discover Istria Experience 시작</b> · 로컬 가이드 동행 → <b>Rovinj 올드타운</b> 도보 투어</li>
+        <li>골목길·성 유페미아 성당 주변 탐방 · 자유 시간</li>
+        <li>일몰 무렵: <b>🚤 선셋 보트 크루즈</b> (로빈 해안 일몰 감상 · 일몰 19:20~20:00)</li>
+        <li>✋ <b>크루즈 종료 후 버스에서 로빈 하차</b> (호텔 복귀 안 함 · 기사에게 사전 고지 필요)</li>
+        <li><b>🚗 로빈 현지 렌터카 픽업</b> (로빈 시내 업체 · 사전 예약 필요 · 짐은 행사 전 버스에 미리 실을 것)</li>
+        <li><b>Apartments and Rooms Irena 체크인</b> (15:00~20:00 창 · 늦을 시 숙소 사전 연락 권장)</li>
+        <li>🍽️ 디너: 보트 크루즈 종료 후 로빈 올드타운 현지 식당 (자유롭게 · 사전 예약 불필요)</li>
+        <li>저녁 이후: 올드타운 추가 산책 · 성 유페미아 성당 야경</li>
+      </ul>
+      <div style="margin-top:8px;padding:8px 10px;background:#fff0f0;border:1px dashed var(--hr);border-radius:8px;font-size:12px;color:var(--ink);line-height:1.55;">
+        ⚠️ <b>사전 처리 필요:</b><br>
+        ① <b>로빈 렌터카 업체 사전 예약</b> (Pula가 아닌 Rovinj 픽업 · 기존 Pula 예약 있으면 픽업 위치 변경 요청)<br>
+        ② 출장 짐을 행사 버스에 실을 수 있는지 Infobip Vision 측 확인<br>
+        ③ 버스 기사에게 로빈 하차 의사 사전 전달 (vision@infobip.com or Milana +385 99-3**-****)<br>
+        ④ 로빈 숙소(Apartments Irena)에 늦은 도착 가능성 사전 고지
+      </div>
+    </div>
+
+    <div class="daybox">
+      <b>9/12 (토) · 로빈 → 플리트비체 <span style="color:var(--accent);">(자연 하이라이트 · 관통 코스)</span></b>
+      <ul style="margin-left:16px;margin-top:4px;">
+        <li>09:00 로빈에서 여유롭게 조식 · 체크아웃</li>
+        <li>10:00~13:30 이동 (270km, 3시간 30분, A6/A1 고속도로)</li>
+        <li>중간 휴게소 점심 (Karlovac 근처 추천)</li>
+        <li><b>14:00 Hotel Jezero 체크인</b> · 짐 맡기기 · 트레킹 복장 준비</li>
+        <li>14:15 호텔 → <b>ST1(Entrance 1)</b> 이동 (셔틀 or 자차 · 5~10분)</li>
+        <li><b>15:00 ST1 게이트 스캔</b> (15:00~16:00 입장 창 · 티켓 규정 엄수)</li>
+        <li><b>15:00~16:30</b> 🎯 <b>Veliki Slap(대폭포 78m) 정면</b> · Sastavci · Kaluđerovac 등 하호(Lower Lakes) 하이라이트</li>
+        <li>16:30~17:00 <b>P3 선착장</b>까지 목재 산책로 상행</li>
+        <li><b>17:00~17:20</b> 🚤 전기보트 <b>P3 → P2</b> (Kozjak 호수 크로스 · 15~20분 · 마지막 배 시간 현장 확인)</li>
+        <li>17:20~18:30 상호(Upper Lakes) 산책 · Gradinsko · Galovac 청록빛 호수 · 평지 목재 산책로</li>
+        <li>18:30 <b>ST2(Entrance 2)로 exit</b> → 호텔 <b>도보 5분</b> 복귀</li>
+        <li>19:00 저녁: 호텔 레스토랑 or 공원 내 식당 · 별 관측 (공원 내 = 매우 어두움)</li>
+      </ul>
+    </div>
+
+    <div class="daybox si">
+      <b>9/13 (일) · 플리트비체 → 포스토이나 → 류블랴나 <span style="color:var(--hr);">(하이라이트 데이)</span></b>
+      <ul style="margin-left:16px;margin-top:4px;">
+        <li><b>07:00 조식</b> · 호텔 산책 (공원 내 티켓 없이 접근 가능 구역만) · 공기·풍경 즐기기</li>
+        <li><b>09:00 체크아웃</b> · 슬로베니아 방향 출발 <span style="color:var(--muted);font-size:12px;">(※ 티켓은 9/12 오후 1회권 · 9/13 재입장 불가)</span></li>
+        <li>09:00~13:00 이동 (플리트비체→포스토이나 220km, 3시간, 국경 1회)</li>
+        <li><b>13:30~16:00 포스토이나 동굴 + 예다마 성</b> (콤보 €38/인, 사전예약 필수)</li>
+        <li>16:00~17:30 이동 (포스토이나→류블랴나 55km, 1시간)</li>
+        <li><b>18:00 Boutique Apartments 체크인</b></li>
+        <li>저녁: 케이블카로 류블랴나 성 · 강변 야경 디너 (트리플 브릿지)</li>
+      </ul>
+    </div>
+
+    <div class="daybox">
+      <b>9/14 (월) · 류블랴나 → 블레드 → 자그레브 <span style="color:var(--accent);">(블레드 확정)</span></b>
+      <ul style="margin-left:16px;margin-top:4px;">
+        <li><b>07:30 조식</b> · 짐 정리</li>
+        <li><b>08:30 Boutique Apartments 체크아웃</b> · 렌터카 출발</li>
+        <li>08:30~09:30 이동 (류블랴나 → 블레드 55km · 1시간)</li>
+        <li><b>09:30~12:30 🏔️ 블레드 관광 (3시간)</b>
+          <ul style="margin-left:14px;">
+            <li>🚤 <b>플레트나(전통 나룻배)</b> 승선 → 섬 교회 · 소원종 (€18/인)</li>
+            <li>⛪ 섬 교회 입장 · 계단 99개 · 소원종 (€12/인)</li>
+            <li>🏰 블레드 성 (호수 조망 전망대 · 성벽 산책)</li>
+            <li>🍰 <b>크림케이크 Kremšnita</b> 원조집 <b>Park Restaurant</b> (Grand Hotel Toplice 내부 · €7~8)</li>
+          </ul>
+        </li>
+        <li>12:30 블레드 → 자그레브 이동 준비</li>
+        <li>12:30~15:30 이동 (블레드 → 자그레브 145km · 국경 통과 · 2시간 30분 · 점심 휴게소)</li>
+        <li><b>15:30~16:00 아파트먼트 캅톨 체크인</b> · 짐 정리</li>
+        <li>16:00~18:30 자그레브 시내 · 반옐라치치 광장 · 성 마르크 성당(모자이크 지붕) · 돌라츠 시장 · 상부도시</li>
+        <li><b>19:00 저녁</b> · 상부도시 로컬 요리 · 세계 최단 케이블카(Uspinjača)</li>
+      </ul>
+    </div>
+
+    <div class="daybox">
+      <b>9/15 (화) · 자그레브 · 출국일 <span style="color:var(--muted);font-size:12px;font-weight:600;">(팀장님 오전 · 나는 저녁 · 개별 항공편)</span></b>
+      <ul style="margin-left:16px;margin-top:4px;">
+        <li><b>07:00~08:00 조식</b> · 짐 정리 (팀장님 우선 팩킹)</li>
+        <li><b>08:00 아파트먼트 캅톨 얼리 체크아웃</b> or 짐 맡기기 협의</li>
+        <li><b>08:30 자그레브 공항으로 이동 (30분)</b> · 렌터카 or 택시 (짐 부피에 따라 결정)</li>
+        <li><b>09:00 팀장님 공항 도착 · 체크인 & 배웅</b> <span style="color:var(--muted);font-size:12px;">※ 팀장님 실제 항공편 시간 확인 후 이 블록 조정 필요</span></li>
+        <li>10:30~11:00 자그레브 시내 복귀 (혼자)</li>
+        <li><b>11:00~15:00 자그레브 시내 자유</b> · 반옐라치치 광장 · 성 마르크 성당 · 돌라츠 시장 · 미술관 · 카페 · 기념품 쇼핑</li>
+        <li>15:00~16:00 체크아웃 · 짐 픽업 · 렌터카 재사용 시 정비</li>
+        <li>16:30 공항 도착 · <b>렌터카 최종 반납 (원웨이)</b></li>
+        <li>17:30 체크인 · 이스탄불 경유</li>
+        <li><b>20:35 나 출국</b> · 인천행 (9/16 도착)</li>
+      </ul>
+      <div style="margin-top:8px;padding:8px 10px;background:#fff8e1;border:1px dashed var(--gold);border-radius:8px;font-size:12px;color:var(--ink);line-height:1.55;">
+        💡 <b>운영 팁:</b> 짐이 많으면 팀장님과 함께 렌터카로 공항 이동 후 잠깐 대기 → 나 혼자 렌터카로 시내 복귀. 짐이 적으면 택시 왕복이 단순. 항공편 시간표 나오면 이 시나리오 확정.
+      </div>
+    </div>
+  </div>
+
+  <!-- 무리하지 않는 플리트비체 코스 -->
+  <div class="card">
+    <h2 class="si"><span class="bar"></span>💧 플리트비체 · 무리하지 않는 추천 코스 <span style="font-size:13px;color:var(--muted);font-weight:600;">· 팀장님 동행 맞춤</span></h2>
+
+    <p style="font-size:13.5px;color:var(--muted);margin-bottom:10px;">
+      <b>티켓 규정:</b> 9/12 15:00 <b>Entrance 1(ST1)</b> 지정 · 1회권 · 변경/취소 불가.
+      호텔은 <b>ST2 도보 5분</b> 위치 · <b>ST1 진입 → ST2 exit 관통 코스</b>가 동선상 정답.
+    </p>
+
+    <div class="coursebox">
+      <div class="ctitle">⭐ 확정 코스: "ST1 진입 → 대폭포 → 전기보트 → 상호 → ST2 exit"</div>
+      <div class="ctime">총 소요: 3.5시간 (15:00~18:30) · 난이도: ⭐⭐⭐☆☆ (평지 목재산책로 + 셔틀·보트)</div>
+
+      <div style="margin-top:10px;font-weight:800;color:var(--accent);">📅 9/12 (토) · 하나뿐인 관람 기회</div>
+      <ol>
+        <li><b>14:00 Hotel Jezero 체크인</b> · 짐 맡기고 트레킹 복장</li>
+        <li><b>14:15 호텔 → ST1 이동</b> · 셔틀 or 자차 (5~10분)</li>
+        <li><b>15:00 ST1 게이트 스캔</b> (15:00~16:00 입장 창 엄수)</li>
+        <li><b>15:00~16:30 하호(Lower Lakes) · 대폭포 정면</b> — Veliki Slap 78m, Sastavci, Kaluđerovac</li>
+        <li><b>16:30~17:00 P3 선착장 도보 상행</b></li>
+        <li><b>17:00~17:20 🚤 전기보트 P3 → P2</b> (Kozjak 호수 크로스)</li>
+        <li><b>17:20~18:30 상호(Upper Lakes) 산책</b> — Gradinsko · Galovac 청록빛 호수</li>
+        <li><b>18:30 ST2로 exit → 호텔 도보 5분</b> · 저녁 식사</li>
+      </ol>
+    </div>
+
+    <div class="spot" style="margin-top:14px;">
+      <div class="head" style="font-size:14px;">🎯 <b>이 코스가 좋은 이유</b></div>
+      <ul style="font-size:13px;">
+        <li>✅ <b>대폭포 우선 확보</b> — ST1 진입 즉시 15분 도보로 정면 도착 (오후 햇빛 골든타임)</li>
+        <li>✅ <b>왕복 아닌 관통 코스</b> — 시작(ST1)과 종료(ST2)가 달라서 동선 낭비 X</li>
+        <li>✅ <b>호텔 도보 복귀</b> — ST2 exit 후 5분 걷기로 종료 (지친 다리에 최고)</li>
+        <li>✅ 하호(대폭포) + 상호(청록 호수) 둘 다 관람 = B 코스 정석</li>
+      </ul>
+    </div>
+
+    <div class="spot">
+      <div class="head" style="font-size:14px;">⚠️ <b>주의사항</b></div>
+      <ul style="font-size:13px;">
+        <li>🕐 <b>전기보트 마지막 배 시간 필수 확인</b> — 성수기 보통 18:30, 시즌마다 다름 (현장 확인)</li>
+        <li>🎫 티켓 규정상 <b>1회권</b> — 나가면 재입장 불가 · 한번에 관통</li>
+        <li>👟 목재 산책로 젖어 있음 · <b>hiking shoes 권장</b> (오픈토 슈즈는 비추 · 티켓 원문 명시)</li>
+        <li>🥾 총 도보 약 4~5km · 대부분 평지 목재 산책로 · 하호 초입에만 계단 있음</li>
+        <li>❌ 9/13 새벽 재입장 불가 (티켓 규정) · 아침엔 조식·산책·체크아웃만</li>
+      </ul>
+    </div>
+
+    <div class="must">
+      ⭐ <b>준비물:</b> 편한 운동화(젖을 수 있음) · 얇은 겉옷(오후 서늘함) · 물병 · 카메라 · <b>입장권 e-티켓 모바일 저장</b> (261*****086 / 265*****486)
+    </div>
+  </div>
+
+  <!-- 지역별 관광 포인트 -->
+  <div class="card">
+    <h2><span class="bar"></span>📍 지역별 관광 포인트</h2>
+
+    <div class="spot">
+      <div class="head">🏖️ 로빈 (Rovinj) <span class="day">· 9/11 · 아드리아 해안</span></div>
+      <ul>
+        <li>올드타운 · 성 유페미아 성당 전망대 (좁은 골목 낭만)</li>
+        <li>아드리아 해안 노을 (일몰 19:20)</li>
+        <li>해산물 + 이스트리아 와인</li>
+      </ul>
+    </div>
+
+    <div class="spot">
+      <div class="head">💧 플리트비체 국립공원 (Plitvice Lakes NP) <span class="day">· 9/12~13 · UNESCO 자연유산</span></div>
+      <ul>
+        <li>16개 계단식 호수 · 청록빛 물색</li>
+        <li>대폭포 Veliki Slap (78m, 크로아티아 최대)</li>
+        <li>목재 산책로 + 전기보트 + 셔틀버스</li>
+        <li>새벽 07:00 개장 — 공원 내 호텔의 특권</li>
+      </ul>
+    </div>
+
+    <div class="spot">
+      <div class="head">🕳️ 포스토이나 (Postojna) <span class="day">· 9/13 낮</span></div>
+      <ul>
+        <li>포스토이나 동굴 (꼬마기차 지하 1.5h, 10℃ 겉옷)</li>
+        <li>예다마 성 (콤보 €38/인 · 사전예약)</li>
+      </ul>
+    </div>
+
+    <div class="spot">
+      <div class="head">🇸🇮 류블랴나 (Ljubljana) <span class="day">· 9/13 저녁 ~ 9/14 아침</span></div>
+      <ul>
+        <li>용 다리·트리플 브릿지·프레셰렌 광장</li>
+        <li>류블랴나 성 (케이블카 · 야경)</li>
+        <li>강변 카페·중앙시장</li>
+      </ul>
+    </div>
+
+    <div class="spot">
+      <div class="head">🏔️ 블레드 (Bled) <span class="day">· 9/14 오전 · 확정 ✅</span></div>
+      <ul>
+        <li>블레드 호수 · 섬 교회 · 소원종</li>
+        <li>블레드 성 (호수 조망)</li>
+        <li>크림케이크 Kremšnita (Park Restaurant 원조)</li>
+      </ul>
+    </div>
+
+    <div class="spot">
+      <div class="head">🇭🇷 자그레브 (Zagreb) <span class="day">· 9/14 오후 ~ 9/15</span></div>
+      <ul>
+        <li>반옐라치치 광장 · 구시가지</li>
+        <li>성 마르크 성당 (모자이크 지붕)</li>
+        <li>돌라츠 시장 · 세계 최단 케이블카</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 숙소 4개 확정 -->
+  <div class="card">
+    <h2><span class="bar"></span>🏨 숙소 (4박 모두 확정 ✅)</h2>
+    <div class="stay-grid">
+      <div class="stay ok">
+        <div class="area">🇭🇷 로빈 (9/11, 1박) ✅</div>
+        <div class="meta">
+          <b>Apartments and Rooms Irena ★★★</b><br>
+          Sebastiano Schiavone 1, 52210 Rovinj<br>
+          2베드룸 · 무료전용주차 · 평점 9.4<br>
+          체크인 <b>9/11(금) 15:00~20:00</b> · 체크아웃 9/12(토) 07:00~10:00<br>
+          <b>₩212,519</b> · 예약번호 <b>68******16</b> / PIN <b>****</b>
+        </div>
+      </div>
+
+      <div class="stay ok">
+        <div class="area">🇭🇷 플리트비체 (9/12, 1박) ✅<span class="tag new">국립공원 내</span></div>
+        <div class="meta">
+          <b>Hotel Jezero - Plitvice Lakes National Park ★★★</b><br>
+          Plitvička Jezera, 53231 Plitvička Jezera, Croatia<br>
+          <b>국립공원 내부</b> · <b>ST2 게이트 도보 5분</b> (트레킹 종료 exit 지점) · ST1은 셔틀/차 5~10분<br>
+          체크인 <b>9/12(토) 15:00~</b> · 체크아웃 9/13(일) 07:00~11:00<br>
+          <b>₩370,437</b>
+        </div>
+      </div>
+
+      <div class="stay ok">
+        <div class="area">🇸🇮 류블랴나 (9/13, 1박) ✅</div>
+        <div class="meta">
+          <b>Boutique Apartments</b><br>
+          시내 · 무료전용주차 · 평점 9.6<br>
+          체크인 <b>9/13(일)</b> · 체크아웃 9/14(월)<br>
+          <b>₩230,845</b>
+        </div>
+      </div>
+
+      <div class="stay ok">
+        <div class="area">🇭🇷 자그레브 (9/14, 1박) ✅</div>
+        <div class="meta">
+          <b>아파트먼트 캅톨 (Apartman Kaptol)</b><br>
+          자그레브 도심<br>
+          체크인 <b>9/14(월)</b> · 체크아웃 9/15(화)<br>
+          <b>₩159,798</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <li><b>총 결제금액: ₩973,599</b> (로빈 212,519 + 플리트비체 370,437 + 류블랴나 230,845 + 자그레브 159,798)</li>
+      <li>이전 취소 예약 2건 (Bohinj Hotel Jezero, Rovinj 2박 초기 예약) 모두 환불 처리 대기 중 · 7~12일 내 완료 예상</li>
+      <li>플리트비체 <b>공원 입장권</b> ✅ 사전 예매 완료 — 9/12 15:00 · <b>Entrance 1(ST1) 진입 → ST2 exit 관통 코스</b> · 성인 2명 · €55.00 · 결제일 2026-08-14 · <span style="color:#c8102e;">변경·취소 불가</span></li>
+    </div>
+  </div>
+
+  <!-- 1인당 비용 정산 -->
+  <div class="card">
+    <h2><span class="bar"></span>🧾 1인당 비용 정산 <span style="font-size:13px;color:var(--muted);font-weight:600;">· 2인 공동경비 ÷ 2</span></h2>
+
+    <div class="settle">
+      <table>
+        <tr>
+          <th style="width:44%;">항목</th>
+          <th style="width:14%;text-align:center;">결제</th>
+          <th style="text-align:right;">전체 (2인)</th>
+          <th style="text-align:right;">1인당</th>
+        </tr>
+
+        <tr><td class="cat" colspan="4">🏨 숙소 — 선결제 (Booking 자동청구)</td></tr>
+        <tr><td>로빈 Apartments Irena (9/11, 1박)</td><td style="text-align:center;font-size:11.5px;color:var(--accent);font-weight:700;">✅ 선결제</td><td class="amt">₩212,519</td><td class="amt">₩106,260</td></tr>
+        <tr><td>플리트비체 Hotel Jezero (9/12, 1박)</td><td style="text-align:center;font-size:11.5px;color:var(--accent);font-weight:700;">✅ 선결제</td><td class="amt">₩370,437</td><td class="amt">₩185,219</td></tr>
+        <tr><td>류블랴나 Boutique Apartments (9/13, 1박)</td><td style="text-align:center;font-size:11.5px;color:var(--accent);font-weight:700;">✅ 선결제</td><td class="amt">₩230,845</td><td class="amt">₩115,423</td></tr>
+        <tr><td>자그레브 아파트먼트 캅톨 (9/14, 1박)</td><td style="text-align:center;font-size:11.5px;color:var(--accent);font-weight:700;">✅ 선결제</td><td class="amt">₩159,798</td><td class="amt">₩79,899</td></tr>
+        <tr class="subtotal"><td>선결제 소계 (숙소 4박)</td><td></td><td class="amt">₩973,599</td><td class="amt">₩486,800</td></tr>
+
+        <tr><td class="cat" colspan="4">🚗 교통 — 현지 발생 (예상)</td></tr>
+        <tr><td>렌터카 5일 (Pula→Zagreb 원웨이)</td><td style="text-align:center;font-size:11.5px;color:var(--muted);">예상</td><td class="amt">~₩550,000</td><td class="amt">~₩275,000</td></tr>
+        <tr><td>유류비 + 통행료 + 비네트</td><td style="text-align:center;font-size:11.5px;color:var(--muted);">예상</td><td class="amt">~₩200,000</td><td class="amt">~₩100,000</td></tr>
+        <tr class="subtotal"><td>교통 소계 (예상)</td><td></td><td class="amt">~₩750,000</td><td class="amt">~₩375,000</td></tr>
+
+        <tr><td class="cat" colspan="4">🎟️ 입장권 · 레스토랑 — 예매 완료</td></tr>
+        <tr><td>플리트비체 입장권 (€55.00 ✅ 결제완료)</td><td style="text-align:center;font-size:11.5px;color:var(--accent);font-weight:700;">✅ 선결제</td><td class="amt">₩79,475</td><td class="amt">₩39,738</td></tr>
+        <tr><td>포스토이나 동굴 + 프레드야마 성 (€102.80 ✅ 결제완료)</td><td style="text-align:center;font-size:11.5px;color:var(--accent);font-weight:700;">✅ 선결제</td><td class="amt">₩148,546</td><td class="amt">₩74,273</td></tr>
+        <tr><td>블레드 플레트나+섬교회+크림케이크 (€38 × 2)</td><td style="text-align:center;font-size:11.5px;color:var(--gold);font-weight:700;">🏨 현장</td><td class="amt">~₩110,000</td><td class="amt">~₩55,000</td></tr>
+        <tr class="subtotal"><td>입장권 소계</td><td></td><td class="amt">₩338,021</td><td class="amt">₩169,011</td></tr>
+
+        <tr class="final">
+          <td colspan="2">🎯 공동경비 합계 (숙소+교통+입장권)</td>
+          <td class="amt">~₩2,061,620</td>
+          <td class="amt">~₩1,030,810</td>
+        </tr>
+      </table>
+      <div class="memo">
+        <b>☝️ 안내</b>  수치는 “2인 공동 부담 ÷ 2” 기준. 식비·개인 쇼핑 등은 각자 부담이므로 제외. 
+        현장결제·예상 항목은 <b>실제 결제 시점에 확정</b>되며, 허위 사항이 있으면 상호 확인 드릴게요.
+      </div>
+    </div>
+
+    <div style="margin-top:14px;padding:12px 14px;background:#f0f5ff;border:1px solid var(--si);border-radius:10px;font-size:13.5px;line-height:1.7;">
+      <div style="font-weight:800;color:var(--si);margin-bottom:4px;">📝 정산 최종 집계</div>
+      <table style="width:100%;margin-top:4px;font-size:13px;">
+        <tr><td>✅ <b>선결제된 숙소(4박) — 1인당</b></td><td style="text-align:right;"><span style="color:var(--accent);font-weight:800;font-size:15px;">₩486,800</span></td></tr>
+        <tr><td>🎫 <b>선결제된 입장권(2건) — 1인당</b></td><td style="text-align:right;"><span style="color:var(--accent);font-weight:800;font-size:15px;">₩114,011</span></td></tr>
+        <tr><td>🚗 <b>현지 발생비 (렌터카+연료+블레드 €38) — 1인당 예상</b></td><td style="text-align:right;"><span style="color:var(--muted);font-weight:700;">~₩430,000</span></td></tr>
+      </table>
+      <div style="margin-top:8px;padding-top:8px;border-top:1px dashed var(--si);font-size:12.5px;color:var(--muted);line-height:1.6;">
+        · <b>선결제 숙소 ₩486,800</b>는 팀장님이 이미 결제하신 숙소 4박(로빈·플리트비체·류블랴나·자그레브) 중 제 분담 몫입니다.<br>
+        · <b>선결제 입장권 ₩114,011</b>은 제가 직접 결제한 플리트비체·포스토이나 티켓(2건) 중 팀장님 분담 몫입니다. (영수증 PDF 전달 가능)<br>
+        · 두 항목 상쇄하면 <b>제가 팀장님께 ₩372,789 정산</b>하면 되는 구조입니다. (486,800 - 114,011 = 372,789)<br>
+        · 렌터카·연료·블레드 등 현장 발생 항목은 그때그때 나눠 내는 스타일 권장.
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 예매 확정 요약 (v7 신규) -->
+  <div class="card">
+    <h2><span class="bar"></span>🎫 예매 확정 요약 <span style="font-size:13px;color:var(--muted);font-weight:600;">· 티켓·레스토랑 (숙소 제외)</span></h2>
+    <table>
+      <tr>
+        <th style="width:70px;">날짜/시간</th>
+        <th>항목</th>
+        <th style="width:110px;">인원/옵션</th>
+        <th style="width:110px;text-align:right;">결제</th>
+        <th style="width:160px;">예약번호</th>
+      </tr>
+      <tr>
+        <td class="d">9/11 (금)<br>18:30</td>
+        <td><b>🍽️ Puntulina · 로빈</b> <span style="font-size:11px;background:#fee;color:var(--hr);padding:2px 6px;border-radius:4px;">❌ 취소</span><br><small>선셋 보트 크루즈 시간 충돌 · 취소 완료 (2026-09-03)</small></td>
+        <td style="opacity:.5;">2인</td>
+        <td style="text-align:right;color:var(--muted);"><s>현장 결제</s></td>
+        <td><small>취소 완료</small></td>
+      </tr>
+      <tr>
+        <td class="d">9/12 (토)<br>15:00</td>
+        <td><b>💧 플리트비체 국립공원 입장권</b><br><small>Entrance 1 (ST1) · Adults after 15h · 1회권</small></td>
+        <td>성인 2명</td>
+        <td style="text-align:right;font-weight:800;color:var(--accent);">€55.00</td>
+        <td><small>261*****086<br>265*****486</small></td>
+      </tr>
+      <tr>
+        <td class="d">9/13 (일)<br>14:00</td>
+        <td><b>🕳️ 포스토이나 동굴 + 프레드야마 성</b><br><small>AV 오디오가이드 포함 · Boarding 13:45</small></td>
+        <td>성인 2명</td>
+        <td style="text-align:right;font-weight:800;color:var(--accent);">€102.80</td>
+        <td><small>Order 89****<br>WEB-WEB-109941</small></td>
+      </tr>
+      <tr style="background:#f0faf5;">
+        <td colspan="3"><b>예매 티켓 합계</b></td>
+        <td style="text-align:right;font-weight:800;color:var(--accent);font-size:15px;">€157.80</td>
+        <td><small>≈ ₩228,000 (1EUR=1,445원 기준)</small></td>
+      </tr>
+    </table>
+    <div class="note">
+      <li>티켓 PDF·이메일 사본은 폴더 <code>2026-09-croatia-slovenia</code> 내 저장 완료 · 모바일에도 미리 저장 권장</li>
+      <li>플리트비체 티켓은 <b>1회권 · 변경·취소 불가</b> (티켓 원문 명시: "binding and final") · 극한 기상으로 공원 폐쇄 시만 자동 환불</li>
+      <li>포스토이나 티켓 변경 시 <b>티켓당 €2</b> 수수료 (매표소에서 처리)</li>
+      <li>Puntulina 예약 취소 완료 (2026-09-03) · 선셋 보트 크루즈 시간 충돌 · 9/11 저녁은 보트 후 올드타운 자유 식사로 변경</li>
+    </div>
+  </div>
+
+  <!-- 출발 전 체크리스트 -->
+  <div class="card">
+    <h2><span class="bar"></span>✅ 출발 전 체크리스트 <span style="font-size:13px;color:var(--muted);font-weight:600;">· 클릭해서 완료 체크 · 브라우저에 자동 저장</span></h2>
+
+    <div class="cprog">
+      <span>진행률</span>
+      <div class="cbar"><div id="cbarFill" style="width:0%;"></div></div>
+      <span id="cbarText">0 / 0</span>
+    </div>
+
+    <h3 style="font-size:14px;font-weight:800;color:var(--accent);margin:12px 0 8px;">🎟️ 입장권 · 레스토랑 — 예매 완료 ✅</h3>
+    <div class="checklist">
+      <div class="check-item done" data-id="c-plitvice-ticket">
+        <div class="cbox"></div>
+        <div class="cbody">
+          <div class="ctitle">플리트비체 국립공원 입장권 <span class="curgent ok-tag">✅ 예매 완료</span></div>
+          <div class="cmeta"><b>9/12(토) 15:00~16:00 · Entrance 1(ST1) · 성인 2명 (Adults after 15h)</b> · €55.00 (Ticket €50 + 옵션 €5) · 결제일 2026-08-14 · 티켓번호 <b>261*****086 / 265*****486</b> · <span style="color:#c8102e;font-weight:700;">규정상 변경·취소 불가 · 1회권</span> · <a href="https://ulaznice.np-plitvicka-jezera.hr/" target="_blank">공식 사이트</a></div>
+        </div>
+      </div>
+      <div class="check-item done" data-id="c-postojna-ticket">
+        <div class="cbox"></div>
+        <div class="cbody">
+          <div class="ctitle">포스토이나 동굴 + 프레드야마 성 콤보 (AV) <span class="curgent ok-tag">✅ 예매 완료</span></div>
+          <div class="cmeta"><b>9/13(일) 14:00 슬롯 · Boarding 13:45</b> · 성인 2명 · AV 오디오가이드 포함 · €102.80 (입장권 €95 + AV €7.80) · 주문번호 <b>89****</b> · Invoice WEB-WEB-109941 · 프레드야마 성 09:00~17:30 개방 · 변경 시 티켓당 €2</div>
+        </div>
+      </div>
+      <div class="check-item done" data-id="c-puntulina">
+        <div class="cbox"></div>
+        <div class="cbody">
+          <div class="ctitle" style="text-decoration:line-through;opacity:.6;">🌅 로빈 <b>Puntulina</b> 레스토랑 <span class="curgent" style="background:#999;">❌ 취소 완료</span></div>
+          <div class="cmeta" style="opacity:.6;">선셋 보트 크루즈 시간 충돌로 취소 (2026-09-03) · 보트 후 올드타운 자유 디너로 대체</div>
+        </div>
+      </div>
+      <div class="check-item" data-id="c-bled-plesnja">
+        <div class="cbox"></div>
+        <div class="cbody">
+          <div class="ctitle">블레드 플레트나 배 <span class="curgent ok-tag">✅ 9/14 방문 확정</span></div>
+          <div class="cmeta">현장 승선(예약 불필요) · €18/인 · 섬교회 입장 별도 €12 · <b>Grand Hotel Toplice · Park Restaurant 크림케이크(€8) 병행 권장</b></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:14px;font-weight:800;color:var(--hr);margin:16px 0 8px;">🚗 이동 · 준비</h3>
+    <div class="checklist">
+      <div class="check-item" data-id="c-rental">
+        <div class="cbox"></div>
+        <div class="cbody">
+          <div class="ctitle">렌터카 예약 확정 <span class="curgent med">진행중</span></div>
+          <div class="cmeta"><b>Rovinj 픽업</b> → Zagreb 공항 반납 (원웨이) · <b>국경통과 허용</b> + 슬로베니아 비네트 포함 · <span style="color:var(--hr);font-weight:700;">※ 기존 Pula 픽업 예약 있으면 Rovinj로 변경 필요</span></div>
+        </div>
+      </div>
+      <div class="check-item" data-id="c-vision-bus">
+        <div class="cbox"></div>
+        <div class="cbody">
+          <div class="ctitle">9/11 Vision 행사 버스 로빈 하차 사전 요청 <span class="curgent">긴급</span></div>
+          <div class="cmeta">Infobip Vision 측에 버스에서 Rovinj 하차 희망 사전 고지 · vision@infobip.com or Milana +385 99-3**-**** · 짐 버스 탑재 여부도 확인</div>
+        </div>
+      </div>
+      <div class="check-item" data-id="c-vignette">
+        <div class="cbox"></div>
+        <div class="cbody">
+          <div class="ctitle">슬로베니아 e-비네트 확인</div>
+          <div class="cmeta">렌터카 포함이면 OK · 미포함시 국경전 온라인 구매 €16 · <a href="https://evinjeta.dars.si/" target="_blank">evinjeta.dars.si</a></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- 예산 -->
+  <div class="card">
+    <h2><span class="bar"></span>💰 예산 <span style="font-size:13px;color:var(--muted);font-weight:600;">· 개인여행 4박5일 · 1인 기준</span></h2>
+    <table class="budget">
+      <tr><th>항목</th><th style="text-align:right;">금액</th></tr>
+      <tr><td>🏨 숙소 (4박, 2인 분할 · 결제 완료)</td><td class="amt">약 49만원</td></tr>
+      <tr><td>🚗 렌터카 + 유류·통행료 (5일, 2인 분할)</td><td class="amt">20~25만원</td></tr>
+      <tr><td>🍽️ 식비</td><td class="amt">25~35만원</td></tr>
+      <tr><td>🎫 입장료 (플리트비체 €40 + 포스토이나 €38 + 블레드 등)</td><td class="amt">12~18만원</td></tr>
+      <tr class="total"><td>합계 (1인)</td><td class="amt">약 106~127만원</td></tr>
+    </table>
+    <ul class="note">
+      <li>출장 기간(9/7~11)은 회사 지원, 연장 항공료 추가부담 없음</li>
+      <li>숙소는 이미 결제 완료 (₩973,599 총액)</li>
+      <li><b>사전예약 필요:</b> 플리트비체 입장권 (성수기 매진) · 포스토이나 동굴</li>
+    </ul>
+  </div>
+
+  <div class="foot">TREK Mini 🧳 · 크로아티아·슬로베니아 플랜 · 2026.09 · <b>v9 · 출발 준비 완료본</b> (업데이트 2026-09-04) · Safe travels! ✈️ · <span style="color:#c8102e;">※ 예약번호·PIN·개인연락처는 마스킹됨 (원본은 개인 소지)</span></div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  var stops = [
+    {n:1, name:"Pula (풀라)",     lat:44.8666, lng:13.8496, cls:"hr",  info:"<b>1. Pula 풀라</b><br>9/7~11 출장(Park Plaza Histria)<br>9/11 렌터카 픽업"},
+    {n:2, name:"Rovinj (로빈)",   lat:45.0811, lng:13.6387, cls:"hr",  info:"<b>2. Rovinj 로빈</b><br>9/11 숙박 1박 (Apartments Irena)<br>아드리아 해안·올드타운"},
+    {n:3, name:"Plitvice Lakes NP", lat:44.8654, lng:15.5820, cls:"hr", info:"<b>3. Plitvice Lakes 플리트비체</b><br>9/12 숙박 1박 (Hotel Jezero Plitvice)<br>UNESCO · 16개 호수·대폭포"},
+    {n:4, name:"Postojna (포스토이나)", lat:45.7767, lng:14.2140, cls:"si", info:"<b>4. Postojna 포스토이나</b><br>9/13 낮 · 국경 통과 🇸🇮<br>카르스트 동굴 + 예다마 성"},
+    {n:5, name:"Ljubljana (류블랴나)", lat:46.0569, lng:14.5058, cls:"si", info:"<b>5. Ljubljana 류블랴나</b><br>9/13 숙박 1박 (Boutique Apartments)<br>구시가·성·강변 야경"},
+    {n:6, name:"Bled (블레드)",     lat:46.3683, lng:14.1146, cls:"si", info:"<b>6. Bled 블레드</b><br>9/14 오전 · 확정 ✅<br>플레트나·섬 교회·크림케이크"},
+    {n:7, name:"Zagreb (자그레브)", lat:45.8150, lng:15.9819, cls:"hr",  info:"<b>7. Zagreb 자그레브</b><br>9/14~15 숙박 1박 (아파트먼트 캅톨)<br>구시가·케이블카·돌라츠 → 9/15 출국"}
+  ];
+  var map = L.map('map', {scrollWheelZoom:false});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom:18, attribution:'&copy; OpenStreetMap'
+  }).addTo(map);
+  var bounds = [];
+  stops.forEach(function(s){
+    var icon = L.divIcon({className:'', html:'<div class="pin '+(s.cls==='hr'?'':s.cls)+'">'+s.n+'</div>', iconSize:[26,26], iconAnchor:[13,13], popupAnchor:[0,-14]});
+    L.marker([s.lat,s.lng],{icon:icon}).addTo(map).bindPopup(s.info);
+    bounds.push([s.lat,s.lng]);
+  });
+  var mainRoute = stops.map(function(s){return [s.lat,s.lng];});
+  L.polyline(mainRoute, {color:'#c8102e', weight:4, opacity:.85}).addTo(map);
+  map.fitBounds(bounds, {padding:[40,40]});
+
+  /* ===== 체크리스트 로직 ===== */
+  const CK = 'trip-checklist-v8';
+  const done = new Set(JSON.parse(localStorage.getItem(CK) || '[]'));
+  const items = document.querySelectorAll('.check-item');
+  const bar = document.getElementById('cbarFill');
+  const txt = document.getElementById('cbarText');
+
+  function render(){
+    let d = 0;
+    items.forEach(el => {
+      const id = el.dataset.id;
+      if (done.has(id)) { el.classList.add('done'); d++; }
+      else el.classList.remove('done');
+    });
+    const t = items.length;
+    const pct = t ? Math.round(d/t*100) : 0;
+    bar.style.width = pct + '%';
+    txt.textContent = d + ' / ' + t + ' (' + pct + '%)';
+  }
+
+  items.forEach(el => {
+    el.addEventListener('click', () => {
+      const id = el.dataset.id;
+      if (done.has(id)) done.delete(id);
+      else done.add(id);
+      localStorage.setItem(CK, JSON.stringify([...done]));
+      render();
+    });
+  });
+
+  render();
+</script>
+
+</body>
+</html>
