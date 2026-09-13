@@ -60,7 +60,8 @@
   .budget td.amt{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;}
   .budget tr.total td{background:#eefaf5;font-weight:800;color:var(--accent);border-top:2px solid var(--accent);font-size:15px;}
   .note{font-size:12.5px;color:var(--muted);margin-top:10px;padding-left:4px;}
-  .note li{margin:3px 0;list-style:none;}
+  .note li{margin:3px 0;list-style:none;overflow-wrap:anywhere;word-break:break-word;}
+  .note code{overflow-wrap:anywhere;word-break:break-all;}
   .note li:before{content:"※ ";color:var(--hr);}
   .stay-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
   @media(max-width:560px){.stay-grid{grid-template-columns:1fr;}}
@@ -160,6 +161,30 @@
   td,th{overflow-wrap:anywhere;word-break:break-word;}
   .settle td.amt{white-space:normal;overflow-wrap:anywhere;}
   a{overflow-wrap:anywhere;}
+  /* 예매 확정 요약 표(.booking): 데스크톱은 5칼 표, 모바일은 카드형 스택(오버플로·글자 깔림 완전 방지) */
+  .booking{table-layout:fixed;}
+  .booking .c-date{width:15%;}
+  .booking .c-item{width:auto;}
+  .booking .c-opt{width:13%;}
+  .booking .c-pay{width:18%;}
+  .booking .c-ref{width:20%;}
+  .booking td,.booking th{white-space:normal;overflow-wrap:anywhere;word-break:break-word;}
+  .booking td small{word-break:break-all;}
+  @media(max-width:560px){
+    /* 헤더 숨기고 각 행을 카드로 */
+    .booking thead,.booking tr>th{position:absolute;left:-9999px;top:-9999px;}
+    .booking tr:first-child{position:absolute;left:-9999px;}
+    .booking,.booking tbody{display:block;width:100%;}
+    .booking tr{display:block;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:10px;background:#fff;}
+    .booking td{display:block;border:none;padding:3px 0;width:auto!important;text-align:left!important;}
+    .booking td:before{content:attr(data-label);display:block;font-size:11px;font-weight:800;color:var(--muted);margin-bottom:1px;}
+    .booking td[data-label='항목']{padding-top:0;}
+    .booking td[data-label='결제']{text-align:left!important;}
+    .booking td.d{color:var(--hr);}
+    /* 합계 행(colspan) 정리 */
+    .booking tr[style]{background:#f0faf5;}
+    .booking td[colspan]{padding-top:4px;}
+  }
   .flight,.stay-grid,.chips,.maplegend,.checklist{min-width:0;}
   .flight>*,.stay-grid>*,.chips>*{min-width:0;max-width:100%;}
   .chip{white-space:normal;}
@@ -833,39 +858,39 @@
   <!-- 예매 확정 요약 -->
   <div class="card">
     <h2><span class="bar"></span>🎫 예매 확정 요약 <span style="font-size:13px;color:var(--muted);font-weight:600;">· 티켓·레스토랑 (숙소 제외)</span></h2>
-    <table>
+    <table class="booking">
       <tr>
-        <th style="width:70px;">날짜/시간</th>
-        <th>항목</th>
-        <th style="width:110px;">인원/옵션</th>
-        <th style="width:110px;text-align:right;">결제</th>
-        <th style="width:160px;">예약번호</th>
+        <th class="c-date">날짜/시간</th>
+        <th class="c-item">항목</th>
+        <th class="c-opt">인원/옵션</th>
+        <th class="c-pay" style="text-align:right;">결제</th>
+        <th class="c-ref">예약번호</th>
       </tr>
       <tr>
-        <td class="d">9/11 (금)<br>18:30</td>
-        <td><b>🍽️ Puntulina · 로빈</b> <span style="font-size:11px;background:#fee;color:var(--hr);padding:2px 6px;border-radius:4px;">❌ 취소</span><br><small>선셋 보트 크루즈 시간 충돌 · 취소 완료 (2026-09-03)</small></td>
-        <td style="opacity:.5;">2인</td>
-        <td style="text-align:right;color:var(--muted);"><s>현장 결제</s></td>
-        <td><small>취소 완료</small></td>
+        <td class="d" data-label="날짜/시간">9/11 (금)<br>18:30</td>
+        <td data-label="항목"><b>🍽️ Puntulina · 로빈</b> <span style="font-size:11px;background:#fee;color:var(--hr);padding:2px 6px;border-radius:4px;">❌ 취소</span><br><small>선셋 보트 크루즈 시간 충돌 · 취소 완료 (2026-09-03)</small></td>
+        <td data-label="인원/옵션" style="opacity:.5;">2인</td>
+        <td data-label="결제" style="text-align:right;color:var(--muted);"><s>현장 결제</s></td>
+        <td data-label="예약번호"><small>취소 완료</small></td>
       </tr>
       <tr>
-        <td class="d">9/12 (토)<br>15:00</td>
-        <td><b>💧 플리트비체 국립공원 입장권</b><br><small>Entrance 1 (ST1) · Adults after 15h · 1회권</small></td>
-        <td>성인 2명</td>
-        <td style="text-align:right;font-weight:800;color:var(--accent);">€50.00<br><small style="color:var(--muted);font-weight:600;">₩91,799</small></td>
-        <td><small>26188159086<br>26511185486</small></td>
+        <td class="d" data-label="날짜/시간">9/12 (토)<br>15:00</td>
+        <td data-label="항목"><b>💧 플리트비체 국립공원 입장권</b><br><small>Entrance 1 (ST1) · Adults after 15h · 1회권</small></td>
+        <td data-label="인원/옵션">성인 2명</td>
+        <td data-label="결제" style="text-align:right;font-weight:800;color:var(--accent);">€50.00<br><small style="color:var(--muted);font-weight:600;">₩91,799</small></td>
+        <td data-label="예약번호"><small>26188159086<br>26511185486</small></td>
       </tr>
       <tr>
-        <td class="d">9/13 (일)<br>14:00</td>
-        <td><b>🕳️ 포스토이나 동굴 + 프레드야마 성</b><br><small>AV 오디오가이드 포함 · Boarding 13:45</small></td>
-        <td>성인 2명</td>
-        <td style="text-align:right;font-weight:800;color:var(--accent);">€102.80<br><small style="color:var(--muted);font-weight:600;">₩184,000</small></td>
-        <td><small>Order 891181<br>WEB-WEB-109941</small></td>
+        <td class="d" data-label="날짜/시간">9/13 (일)<br>14:00</td>
+        <td data-label="항목"><b>🕳️ 포스토이나 동굴 + 프레드야마 성</b><br><small>AV 오디오가이드 포함 · Boarding 13:45</small></td>
+        <td data-label="인원/옵션">성인 2명</td>
+        <td data-label="결제" style="text-align:right;font-weight:800;color:var(--accent);">€102.80<br><small style="color:var(--muted);font-weight:600;">₩184,000</small></td>
+        <td data-label="예약번호"><small>Order 891181<br>WEB-WEB-109941</small></td>
       </tr>
       <tr style="background:#f0faf5;">
-        <td colspan="3"><b>예매 티켓 합계</b></td>
-        <td style="text-align:right;font-weight:800;color:var(--accent);font-size:15px;">€152.80</td>
-        <td><small><b>₩275,799</b> (카드청구 확정)</small></td>
+        <td colspan="3" data-label="합계"><b>예매 티켓 합계</b></td>
+        <td data-label="결제" style="text-align:right;font-weight:800;color:var(--accent);font-size:15px;">€152.80</td>
+        <td data-label="예약번호"><small><b>₩275,799</b> (카드청구 확정)</small></td>
       </tr>
     </table>
     <div class="note">
@@ -986,7 +1011,7 @@
   map.fitBounds(bounds, {padding:[40,40]});
 
   /* ===== 체크리스트 로직 ===== */
-  const CK = 'trip-checklist-v14';
+  const CK = 'trip-checklist-v15';
   const done = new Set(JSON.parse(localStorage.getItem(CK) || '[]'));
   const items = document.querySelectorAll('.check-item');
   const bar = document.getElementById('cbarFill');
