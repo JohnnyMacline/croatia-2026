@@ -161,6 +161,18 @@
   td,th{overflow-wrap:anywhere;word-break:break-word;}
   .settle td.amt{white-space:normal;overflow-wrap:anywhere;}
   a{overflow-wrap:anywhere;}
+  /* 1인당 비용 정산 표(3칼: 항목/결제자/금액) — fixed 레이아웃으로 금액칸 우측 잘림 방지 */
+  .settle:not(.daily) table{table-layout:fixed;}
+  .settle:not(.daily) th:first-child,.settle:not(.daily) td:first-child{width:auto;}
+  .settle:not(.daily) th:nth-child(2),.settle:not(.daily) td:nth-child(2){width:13%;min-width:34px;text-align:center;}
+  .settle:not(.daily) th:last-child,.settle:not(.daily) td.amt{width:30%;min-width:88px;white-space:nowrap;overflow-wrap:normal;word-break:keep-all;font-variant-numeric:tabular-nums;}
+  @media(max-width:560px){
+    .settle:not(.daily) td,.settle:not(.daily) th{padding:8px 4px;}
+    .settle:not(.daily) td.amt,.settle:not(.daily) th:last-child{width:30%;min-width:80px;font-size:11.5px;}
+    .settle:not(.daily) td:nth-child(2){font-size:10.5px;min-width:26px;}
+    .settle:not(.daily) td:first-child,.settle:not(.daily) th:first-child{font-size:12px;}
+    .settle:not(.daily) .cat{font-size:10.5px;}
+  }
   /* 예매 확정 요약 표(.booking): 데스크톱은 5칼 표, 모바일은 카드형 스택(오버플로·글자 깔림 완전 방지) */
   .booking{table-layout:fixed;}
   .booking .c-date{width:15%;}
@@ -217,7 +229,7 @@
   <!-- 확정 예약 요약 -->
   <div class="booked-banner">
     <h3>💰 예매 현황 한눈에 보기</h3>
-    <div>숙소 4개 · 입장권 2건 <b>모두 확정 ✅</b> · <b>모든 비용 내가 선결제</b> · 공동경비 총액 <span class="amt">₩2,151,738</span> → <b>팀장님이 내게 절반 ₩1,075,869 정산</b></div>
+    <div>숙소 4개 · 입장권 2건 <b>모두 확정 ✅</b> · <b>모든 비용 내가 선결제</b> · 공동경비 총액 <span class="amt">₩2,481,364</span> → <b>팀장님이 내게 절반 ₩1,240,682 정산</b></div>
   </div>
 
   <!-- 렌터카 예약 -->
@@ -718,7 +730,7 @@
     </div>
 
     <div class="note">
-      <li><b>숙소 총액: ₩969,714</b> (로빈 215,020 + 플리트비체 369,834 + 류블랴나 223,182 + 자그레브 161,678) <small style="color:var(--muted);">· 영수증 실치 반영 · 모두 내가 결제</small></li>
+      <li><b>숙소 총액: ₩974,676</b> (로빈 215,020 + 플리트비체 374,796 + 류블랴나 223,182 + 자그레브 161,678) <small style="color:var(--muted);">· 영수증 실치 반영 · 모두 내가 결제 · 플리트비체 €226.60 실결제 정정(←€223.60)</small></li>
       <li>이전 취소 예약 2건 (Bohinj Hotel Jezero, Rovinj 2박 초기 예약) 모두 환불 처리 대기 중 · 7~12일 내 완료 예상</li>
       <li>플리트비체 <b>공원 입장권</b> ✅ 사전 예매 완료 — 9/12 15:00 · <b>Entrance 1(ST1) 진입 → ST2 exit 관통 코스</b> · 성인 2명 · €50.00 (인보이스 확정) · 결제일 2026-08-14 · <span style="color:#c8102e;">변경·취소 불가</span></li>
     </div>
@@ -738,10 +750,10 @@
 
         <tr><td class="cat" colspan="3">🏨 숙소 4박 — 전부 내가 결제 (영수증 실치)</td></tr>
         <tr><td>로빈 Apartments Irena (9/11) <small style="color:var(--muted);">€130.00 · 현지결제</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩215,020</td></tr>
-        <tr><td>플리트비체 Hotel Jezero (9/12) <small style="color:var(--muted);">€223.60 · 숙소청구</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩369,834</td></tr>
+        <tr><td>플리트비체 Hotel Jezero (9/12) <small style="color:var(--muted);">€226.60 · 숙소청구(35%할인 실결제)</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩374,796</td></tr>
         <tr><td>류블랴나 Boutique Apartments (9/13) <small style="color:var(--muted);">€134.95 · 선결제</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩223,182</td></tr>
         <tr><td>자그레브 아파트먼트 캅톨 (9/14) <small style="color:var(--muted);">€97.75 · 선결제</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩161,678</td></tr>
-        <tr class="subtotal"><td colspan="2">숙소 소계</td><td class="amt">₩969,714</td></tr>
+        <tr class="subtotal"><td colspan="2">숙소 소계</td><td class="amt">₩974,676</td></tr>
 
         <tr><td class="cat" colspan="3">🎟️ 입장권 — 전부 내가 결제 (카드청구 확정)</td></tr>
         <tr><td>플리트비체 입장권 (성인 2명) <small style="color:var(--muted);">€50.00</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩91,799</td></tr>
@@ -754,9 +766,19 @@
         <tr><td>유류비 + 슬로베니아 비네트 <small style="color:var(--muted);">예상</small></td><td style="text-align:center;font-size:11.5px;color:var(--muted);">나(예상)</td><td class="amt">~₩200,000</td></tr>
         <tr class="subtotal"><td colspan="2">교통 소계</td><td class="amt">~₩906,225</td></tr>
 
+        <tr><td class="cat" colspan="3">🍽️ 식비·마트·주차·현지 통행료 — 현장 결제 (영수증 실치)</td></tr>
+        <tr><td>로빈 Pizzeria Leone 2 (9/11) <small style="color:var(--muted);">€26.00</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩43,004</td></tr>
+        <tr><td>로빈 TOMMY 마트 (9/11) <small style="color:var(--muted);">€11.09</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩18,343</td></tr>
+        <tr><td>중식당 Makao · 포스토이나 (9/13) <small style="color:var(--muted);">€27.20</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩44,989</td></tr>
+        <tr><td>The Salon · 류블랴나 저녁 (9/13) <small style="color:var(--muted);">€82.00</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩135,628</td></tr>
+        <tr><td>Zaka Bled 주차 (9/13) <small style="color:var(--muted);">€22.50</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩37,215</td></tr>
+        <tr><td>Bar Lepa Vida · 류블랴나 (9/13) <small style="color:var(--muted);">€10.80</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩17,863</td></tr>
+        <tr><td>기타 소액 (커피·아이스크림·통행료 4건) <small style="color:var(--muted);">€16.70</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩27,622</td></tr>
+        <tr class="subtotal"><td colspan="2">식비·기타 소계</td><td class="amt">₩324,664</td></tr>
+
         <tr class="final">
-          <td colspan="2">🎯 공동경비 총액 (숙소+입장권+교통)</td>
-          <td class="amt">~₩2,151,738</td>
+          <td colspan="2">🎯 공동경비 총액 (숙소+입장권+교통+식비)</td>
+          <td class="amt">~₩2,481,364</td>
         </tr>
       </table>
       <div class="memo">
@@ -767,18 +789,18 @@
     <div class="settle-final" style="margin-top:14px;padding:14px 16px;background:#f0f5ff;border:1px solid var(--si);border-radius:10px;font-size:13.5px;line-height:1.7;">
       <div style="font-weight:800;color:var(--si);margin-bottom:6px;">📝 정산 최종 집계 <span style="font-size:12px;color:var(--muted);font-weight:600;">· 내가 전부 결제 → 팀장님이 절반 상환</span></div>
       <table style="width:100%;margin-top:4px;font-size:13px;">
-        <tr><td style="font-weight:700;">공동경비 총액 (2인)</td><td style="text-align:right;font-weight:800;">~₩2,151,738</td></tr>
-        <tr><td style="font-weight:700;color:var(--accent);">÷ 2 (팀장님 몫)</td><td style="text-align:right;font-weight:800;color:var(--accent);">~₩1,075,869</td></tr>
-        <tr><td style="padding-top:4px;color:var(--muted);">내 몫 (참고)</td><td style="text-align:right;padding-top:4px;color:var(--muted);font-weight:700;">~₩1,075,869</td></tr>
+        <tr><td style="font-weight:700;">공동경비 총액 (2인)</td><td style="text-align:right;font-weight:800;">~₩2,481,364</td></tr>
+        <tr><td style="font-weight:700;color:var(--accent);">÷ 2 (팀장님 몫)</td><td style="text-align:right;font-weight:800;color:var(--accent);">~₩1,240,682</td></tr>
+        <tr><td style="padding-top:4px;color:var(--muted);">내 몫 (참고)</td><td style="text-align:right;padding-top:4px;color:var(--muted);font-weight:700;">~₩1,240,682</td></tr>
       </table>
       <div style="margin-top:10px;padding:12px;background:#fff;border:2px solid var(--hr);border-radius:8px;text-align:center;font-size:15px;font-weight:800;color:var(--hr);">
-        💸 최종: 팀장님이 내게 <span style="font-size:20px;">~₩1,075,869</span> 정산
+        💸 최종: 팀장님이 내게 <span style="font-size:20px;">~₩1,240,682</span> 정산
       </div>
       <div style="margin-top:8px;padding-top:8px;border-top:1px dashed var(--si);font-size:12.5px;color:var(--muted);line-height:1.6;">
-        · 숙소 4박(₩969,714) + 입장권(₩275,799) + 교통(~₩906,225 · BINA Istra 통행료 €10 포함)을 <b>전부 내가 결제</b>.<br>
-        · 공동경비 총액 ~₩2,151,738 ÷ 2 = <b>팀장님이 내게 ~₩1,075,869 상환</b>.<br>
+        · 숙소 4박(₩974,676) + 입장권(₩275,799) + 교통(~₩906,225 · BINA Istra 통행료 €10 포함) + 식비·기타(₩324,664)를 <b>전부 내가 결제</b>.<br>
+        · 공동경비 총액 ~₩2,481,364 ÷ 2 = <b>팀장님이 내게 ~₩1,240,682 상환</b>.<br>
         · 🚗 렌터카(€416.98 카운터 결제)·유류·비네트는 <b>예상치</b> — 현장 실제 금액 확정 후 최종 정산. <b>BINA Istra 통행료 €10.00은 영수증 확정 반영</b>.<br>
-        · 🍽️ 식비·장보기는 위 표에 미포함 — 함께 쓴 금액이 있으면 동일하게 절반씩 추가.<br>
+        · 🍽️ 식비·마트·주차·현지 통행료 영수증 실치 반영(9/14 추가) — 플리트비체 숙소는 €226.60 실결제로 정정(35% 할인).<br>
         · 유로 환산은 카드 실효환율 1€≈₩1,654 적용.
       </div>
     </div>
@@ -806,19 +828,26 @@
 
         <tr><td class="cat" colspan="3">📅 9/11 (금) · 로빈</td></tr>
         <tr><td>🏨 로빈 Apartments Irena <small style="color:var(--muted);">€130.00</small></td><td class="amt">₩215,020</td><td class="amt">₩107,510</td></tr>
-        <tr class="subtotal"><td>9/11 소계</td><td class="amt">₩215,020</td><td class="amt">₩107,510</td></tr>
+        <tr><td>🍽️ Pizzeria Leone 2 (저녁) <small style="color:var(--muted);">€26.00</small></td><td class="amt">₩43,004</td><td class="amt">₩21,502</td></tr>
+        <tr><td>🛒 TOMMY 마트 (장보기) <small style="color:var(--muted);">€11.09</small></td><td class="amt">₩18,343</td><td class="amt">₩9,172</td></tr>
+        <tr class="subtotal"><td>9/11 소계</td><td class="amt">₩276,367</td><td class="amt">₩138,184</td></tr>
 
         <tr><td class="cat" colspan="3">📅 9/12 (토) · 플리트비체 (렌터카 픽업)</td></tr>
-        <tr><td>🏨 Hotel Jezero <small style="color:var(--muted);">€223.60</small></td><td class="amt">₩369,834</td><td class="amt">₩184,917</td></tr>
+        <tr><td>🏨 Hotel Jezero <small style="color:var(--muted);">€226.60 · 35%할인 실결제</small></td><td class="amt">₩374,796</td><td class="amt">₩187,398</td></tr>
         <tr><td>🎟️ 플리트비체 입장권 <small style="color:var(--muted);">€50.00</small></td><td class="amt">₩91,799</td><td class="amt">₩45,900</td></tr>
         <tr><td>🚗 Enterprise 렌터카 3일 <small style="color:var(--muted);">€416.98 · 9/12~14</small></td><td class="amt">~₩689,685</td><td class="amt">~₩344,842</td></tr>
         <tr><td>🛣️ BINA Istra 통행료 <small style="color:var(--muted);">€10.00 · Kanfanar→Učka</small></td><td class="amt">₩16,540</td><td class="amt">₩8,270</td></tr>
-        <tr class="subtotal"><td>9/12 소계</td><td class="amt">~₩1,167,858</td><td class="amt">~₩583,929</td></tr>
+        <tr class="subtotal"><td>9/12 소계</td><td class="amt">~₩1,172,820</td><td class="amt">~₩586,410</td></tr>
 
-        <tr><td class="cat" colspan="3">📅 9/13 (일) · 포스토이나 · 류블랴나</td></tr>
+        <tr><td class="cat" colspan="3">📅 9/13 (일) · 포스토이나 · 블레드 · 류블랴나</td></tr>
         <tr><td>🎟️ 포스토이나+프레드야마 입장권 <small style="color:var(--muted);">€102.80</small></td><td class="amt">₩184,000</td><td class="amt">₩92,000</td></tr>
         <tr><td>🏨 류블랴나 Boutique Apartments <small style="color:var(--muted);">€134.95</small></td><td class="amt">₩223,182</td><td class="amt">₩111,591</td></tr>
-        <tr class="subtotal"><td>9/13 소계</td><td class="amt">₩407,182</td><td class="amt">₩203,591</td></tr>
+        <tr><td>🍽️ 중식당 Makao (점심) <small style="color:var(--muted);">€27.20</small></td><td class="amt">₩44,989</td><td class="amt">₩22,495</td></tr>
+        <tr><td>🍽️ The Salon (저녁) <small style="color:var(--muted);">€82.00</small></td><td class="amt">₩135,628</td><td class="amt">₩67,814</td></tr>
+        <tr><td>🅿️ Zaka Bled 주차 <small style="color:var(--muted);">€22.50</small></td><td class="amt">₩37,215</td><td class="amt">₩18,608</td></tr>
+        <tr><td>🍺 Bar Lepa Vida <small style="color:var(--muted);">€10.80</small></td><td class="amt">₩17,863</td><td class="amt">₩8,932</td></tr>
+        <tr><td>☕ 기타 소액 (커피·아이스크림·통행료 4건) <small style="color:var(--muted);">€16.70</small></td><td class="amt">₩27,622</td><td class="amt">₩13,811</td></tr>
+        <tr class="subtotal"><td>9/13 소계</td><td class="amt">₩670,499</td><td class="amt">₩335,249</td></tr>
 
         <tr><td class="cat" colspan="3">📅 9/14 (월) · 자그레브 (렌터카 반납)</td></tr>
         <tr><td>🏨 자그레브 아파트먼트 캅톨 <small style="color:var(--muted);">€97.75</small></td><td class="amt">₩161,678</td><td class="amt">₩80,839</td></tr>
@@ -830,26 +859,26 @@
 
         <tr class="final">
           <td>🎯 공동경비 총액 (전 기간)</td>
-          <td class="amt">~₩2,151,738</td>
-          <td class="amt">~₩1,075,869</td>
+          <td class="amt">~₩2,481,364</td>
+          <td class="amt">~₩1,240,682</td>
         </tr>
       </table>
       <div class="memo">
-        <b>☝️ 날짜별 안내</b>  렌터카 3일(9/12~14) 비용은 <b>픽업일(9/12)에 일괄 계상</b>했어. 유류·통행료·비네트는 전 구간에 걸쳐 발생하므로 공통으로 분리. 모든 금액은 <b>내가 결제</b> → 각 날짜 "1인당" 금액이 팀장님이 그날치로 갚을 몫이야. 합산하면 <b>팀장님 총 상환액 ~₩1,075,869</b>. (BINA Istra 통행료 €10.00 영수증 확정 포함)
+        <b>☝️ 날짜별 안내</b>  렌터카 3일(9/12~14) 비용은 <b>픽업일(9/12)에 일괄 계상</b>했어. 유류·통행료·비네트는 전 구간에 걸쳐 발생하므로 공통으로 분리. 모든 금액은 <b>내가 결제</b> → 각 날짜 "1인당" 금액이 팀장님이 그날치로 갚을 몫이야. 합산하면 <b>팀장님 총 상환액 ~₩1,240,682</b>. (식비·마트·주차·현지 통행료 영수증 실치 반영 + 플리트비체 €226.60 정정)
       </div>
     </div>
 
     <div class="settle-final" style="margin-top:14px;padding:14px 16px;background:#eefaf5;border:1px solid var(--accent);border-radius:10px;font-size:13.5px;line-height:1.7;">
       <div style="font-weight:800;color:var(--accent);margin-bottom:6px;">📊 날짜별 팀장님 상환액 요약</div>
       <table style="width:100%;margin-top:4px;font-size:13px;">
-        <tr><td>9/11 로빈</td><td style="text-align:right;font-weight:700;">₩107,510</td></tr>
-        <tr><td>9/12 플리트비체 <small style="color:var(--muted);">(렌터카·통행료 포함)</small></td><td style="text-align:right;font-weight:700;">~₩583,929</td></tr>
-        <tr><td>9/13 포스토이나·류블랴나</td><td style="text-align:right;font-weight:700;">₩203,591</td></tr>
+        <tr><td>9/11 로빈 <small style="color:var(--muted);">(숙소+식비)</small></td><td style="text-align:right;font-weight:700;">₩138,184</td></tr>
+        <tr><td>9/12 플리트비체 <small style="color:var(--muted);">(렌터카·통행료 포함)</small></td><td style="text-align:right;font-weight:700;">~₩586,410</td></tr>
+        <tr><td>9/13 포스토이나·블레드·류블랴나 <small style="color:var(--muted);">(식비 포함)</small></td><td style="text-align:right;font-weight:700;">₩335,249</td></tr>
         <tr><td>9/14 자그레브</td><td style="text-align:right;font-weight:700;">₩80,839</td></tr>
-        <tr><td>공통(유류·통행·비네트 예상)</td><td style="text-align:right;font-weight:700;">~₩100,000</td></tr>
+        <tr><td>공통(유류·비네트 예상)</td><td style="text-align:right;font-weight:700;">~₩100,000</td></tr>
       </table>
       <div style="margin-top:10px;padding:12px;background:#fff;border:2px solid var(--hr);border-radius:8px;text-align:center;font-size:15px;font-weight:800;color:var(--hr);">
-        💸 팀장님 총 상환액 <span style="font-size:20px;">~₩1,075,869</span>
+        💸 팀장님 총 상환액 <span style="font-size:20px;">~₩1,240,682</span>
       </div>
     </div>
   </div>
@@ -977,7 +1006,7 @@
     </table>
     <ul class="note">
       <li>출장 기간(9/7~11)은 회사 지원, 연장 항공료 추가부담 없음</li>
-      <li>숙소는 이미 결제 완료 (₩969,714 총액 · 영수증 실치 반영 · 모두 내가 결제 → 팀장님 절반 상환)</li>
+      <li>숙소는 이미 결제 완료 (₩974,676 총액 · 영수증 실치 반영 · 모두 내가 결제 → 팀장님 절반 상환) · 식비·기타 현장결제 ₩324,664 추가 반영</li>
       <li><b>사전예약 필요:</b> 플리트비체 입장권 (성수기 매진) · 포스토이나 동굴</li>
     </ul>
   </div>
@@ -1011,7 +1040,7 @@
   map.fitBounds(bounds, {padding:[40,40]});
 
   /* ===== 체크리스트 로직 ===== */
-  const CK = 'trip-checklist-v15';
+  const CK = 'trip-checklist-v16';
   const done = new Set(JSON.parse(localStorage.getItem(CK) || '[]'));
   const items = document.querySelectorAll('.check-item');
   const bar = document.getElementById('cbarFill');
