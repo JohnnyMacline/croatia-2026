@@ -115,6 +115,10 @@
   .settle .cat{color:var(--muted);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;padding:14px 8px 6px;background:#fafbfd;}
   .settle .memo{background:#fffbea;font-size:12.5px;color:var(--muted);padding:10px 12px;border-top:1px solid var(--line);}
   .settle .memo b{color:var(--gold);}
+  /* 영수증 링크 칩 */
+  a.rcpt{display:inline-block;font-size:11px;font-weight:700;color:var(--si);background:#eef3ff;border:1px solid #d3e0ff;border-radius:6px;padding:1px 6px;margin-left:4px;text-decoration:none;white-space:nowrap;vertical-align:middle;line-height:1.6;}
+  a.rcpt:hover{background:var(--si);color:#fff;border-color:var(--si);}
+  a.rcpt:active{transform:scale(.96);}
 
   /* 체크리스트 & 의사결정 */
   .checklist{display:grid;grid-template-columns:1fr;gap:8px;}
@@ -165,10 +169,10 @@
   .settle:not(.daily) table{table-layout:fixed;}
   .settle:not(.daily) th:first-child,.settle:not(.daily) td:first-child{width:auto;}
   .settle:not(.daily) th:nth-child(2),.settle:not(.daily) td:nth-child(2){width:13%;min-width:34px;text-align:center;}
-  .settle:not(.daily) th:last-child,.settle:not(.daily) td.amt{width:30%;min-width:88px;white-space:nowrap;overflow-wrap:normal;word-break:keep-all;font-variant-numeric:tabular-nums;}
+  .settle:not(.daily) th:last-child,.settle:not(.daily) td.amt{width:30%;min-width:84px;white-space:nowrap;overflow-wrap:normal;word-break:keep-all;font-variant-numeric:tabular-nums;}
   @media(max-width:560px){
     .settle:not(.daily) td,.settle:not(.daily) th{padding:8px 4px;}
-    .settle:not(.daily) td.amt,.settle:not(.daily) th:last-child{width:30%;min-width:80px;font-size:11.5px;}
+    .settle:not(.daily) td.amt,.settle:not(.daily) th:last-child{width:30%;min-width:76px;font-size:11.5px;}
     .settle:not(.daily) td:nth-child(2){font-size:10.5px;min-width:26px;}
     .settle:not(.daily) td:first-child,.settle:not(.daily) th:first-child{font-size:12px;}
     .settle:not(.daily) .cat{font-size:10.5px;}
@@ -224,7 +228,185 @@
       <span class="chip">🚗 렌터카 원웨이</span>
       <span class="chip">💧 플리트비체 국립공원</span>
     </div>
+    <div style="margin-top:14px;padding:12px 16px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:10px;font-size:13.5px;line-height:1.6;">
+      ✅ <b>여행 종료 · 정산 완료</b> — 공동경비 총액 <b>₩2,709,601</b> (모두 내가 선결제) → 팀장님 상환 <b>₩1,354,800</b>. 각 항목 <b>🧾영수증</b> 링크로 실물 확인 가능.
+    </div>
   </div>
+
+  <!-- ▼▼▼ 여행 정산 (맨 위 고정) ▼▼▼ -->
+  <!-- 1인당 비용 정산 -->
+  <div class="card">
+    <h2><span class="bar"></span>🧾 1인당 비용 정산 <span style="font-size:13px;color:var(--muted);font-weight:600;">· 2인 공동경비 ÷ 2</span></h2>
+
+    <div class="settle">
+      <table>
+        <tr>
+          <th style="width:52%;">항목</th>
+          <th style="width:16%;text-align:center;">결제자</th>
+          <th style="text-align:right;">전체 (2인)</th>
+        </tr>
+
+        <tr><td class="cat" colspan="3">🏨 숙소 4박 — 전부 내가 결제 (영수증 실치)</td></tr>
+        <tr><td>로빈 Apartments Irena (9/11) <small style="color:var(--muted);">€130.00 · 현지결제</small> <a class="rcpt" href="receipts/stay-01-robin-irena.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩215,020</td></tr>
+        <tr><td>플리트비체 Hotel Jezero (9/12) <small style="color:var(--muted);">€226.60 · 숙소청구(35%할인 실결제)</small> <a class="rcpt" href="receipts/stay-02-plitvice-jezero.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩374,796</td></tr>
+        <tr><td>류블랴나 Boutique Apartments (9/13) <small style="color:var(--muted);">€134.95 · 선결제</small> <a class="rcpt" href="receipts/stay-03-ljubljana-boutique.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩223,182</td></tr>
+        <tr><td>자그레브 아파트먼트 캅톨 (9/14) <small style="color:var(--muted);">€97.75 · 선결제</small> <a class="rcpt" href="receipts/stay-04-zagreb-kaptol.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩161,678</td></tr>
+        <tr class="subtotal"><td colspan="2">숙소 소계</td><td class="amt">₩974,676</td></tr>
+
+        <tr><td class="cat" colspan="3">🎟️ 입장권 — 전부 내가 결제 (카드청구 확정)</td></tr>
+        <tr><td>플리트비체 입장권 (성인 2명) <small style="color:var(--muted);">€50.00</small> <a class="rcpt" href="receipts/ticket-01-plitvice.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩91,799</td></tr>
+        <tr><td>포스토이나 동굴 + 프레드야마 성 (성인 2명) <small style="color:var(--muted);">€102.80</small> <a class="rcpt" href="receipts/ticket-02-postojna.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩184,000</td></tr>
+        <tr class="subtotal"><td colspan="2">입장권 소계</td><td class="amt">₩275,799</td></tr>
+
+        <tr><td class="cat" colspan="3">🚗 교통 — 렌터카·유류·통행료·비네트 전부 영수증 확정 · 내가 결제</td></tr>
+        <tr><td>Enterprise 렌터카 3일 (Rovinj→Zagreb 원웨이) <small style="color:var(--muted);">€416.98 · AMEX 실결제</small> <a class="rcpt" href="receipts/car-rental-benussi-slip.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩689,685</td></tr>
+        <tr><td>Petrol 주유 · 류블랴나 Šmartinska (9/14) <small style="color:var(--muted);">€33.61 · 20.08L · 영수증</small> <a class="rcpt" href="receipts/car-fuel-petrol.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩55,591</td></tr>
+        <tr><td>BINA Istra 통행료 (Kanfanar→Učka, 9/12) <small style="color:var(--muted);">€10.00 · 영수증</small> <a class="rcpt" href="receipts/toll-bina-istra.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩16,540</td></tr>
+        <tr><td>HAC 통행료 Ogulin→Rijeka (9/13) <small style="color:var(--muted);">€7.20 · 영수증</small> <a class="rcpt" href="receipts/toll-hac-ogulin-rijeka.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩11,909</td></tr>
+        <tr><td>HAC 통행료 Rupa 국경 (9/13) <small style="color:var(--muted);">€1.10 · 영수증</small> <a class="rcpt" href="receipts/toll-hac-rupa.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩1,819</td></tr>
+        <tr><td>슬로베니아 e-비네트 (주간권 2A · 9/13) <small style="color:var(--muted);">€16.00 · DARS 영수증</small> <a class="rcpt" href="receipts/toll-vignette-dars.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩26,464</td></tr>
+        <tr class="subtotal"><td colspan="2">교통 소계</td><td class="amt">₩802,008</td></tr>
+
+        <tr><td class="cat" colspan="3">🍽️ 식비·마트·주차 — 현장 결제 (영수증 실치)</td></tr>
+        <tr><td>로빈 Pizzeria Leone (9/11 저녁) <small style="color:var(--muted);">€26.00</small> <a class="rcpt" href="receipts/food-01-pizzeria-leone.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩43,004</td></tr>
+        <tr><td>로빈 TOMMY 마트 (9/11) <small style="color:var(--muted);">€11.09</small> <a class="rcpt" href="receipts/food-02-tommy-mart.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩18,343</td></tr>
+        <tr><td>플리트비체 Restoran Poljana (9/12 저녁) <small style="color:var(--muted);">€49.50</small> <a class="rcpt" href="receipts/food-03-plitvice-poljana.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩81,873</td></tr>
+        <tr><td>중식당 Makao · 포스토이나 (9/13 점심) <small style="color:var(--muted);">€27.20</small> <a class="rcpt" href="receipts/food-04-makao.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩44,989</td></tr>
+        <tr><td>포스토이나 Bistro 아이스크림 (9/13) <small style="color:var(--muted);">€5.00</small> <a class="rcpt" href="receipts/food-05-postojna-icecream.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩8,270</td></tr>
+        <tr><td>Ostarije 커피 Stari Most (9/13) <small style="color:var(--muted);">€3.40</small> <a class="rcpt" href="receipts/food-06-ostarije-coffee.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩5,624</td></tr>
+        <tr><td>The Salon · 류블랴나 저녁 (9/13) <small style="color:var(--muted);">€82.00</small> <a class="rcpt" href="receipts/food-07-the-salon.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩135,628</td></tr>
+        <tr><td>Bar Lepa Vida · 류블랴나 (9/13) <small style="color:var(--muted);">€10.80</small> <a class="rcpt" href="receipts/food-08-bar-lepa-vida.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩17,863</td></tr>
+        <tr><td>Zaka Bled 주차 (9/13) <small style="color:var(--muted);">€22.50</small> <a class="rcpt" href="receipts/park-01-zaka-bled.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩37,215</td></tr>
+        <tr><td>류블랴나 Slovenska hiša 조식 (9/14) <small style="color:var(--muted);">€33.80</small> <a class="rcpt" href="receipts/food-09-slovenska-hisa.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩55,905</td></tr>
+        <tr><td>류블랴나 Kongresni trg 주차 (9/14) <small style="color:var(--muted);">€4.00</small> <a class="rcpt" href="receipts/park-02-kongresni-trg.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩6,616</td></tr>
+        <tr><td>자그레브 Taste of Balkan 저녁 (9/14) <small style="color:var(--muted);">€70.00</small> <a class="rcpt" href="receipts/food-10-taste-of-balkan.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩115,780</td></tr>
+        <tr><td>자그레브 Pivnica Mali Medo (9/14) <small style="color:var(--muted);">€29.80</small> <a class="rcpt" href="receipts/food-11-mali-medo.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩49,289</td></tr>
+        <tr><td>자그레브 Broom 44 카페 조식 (9/15) <small style="color:var(--muted);">€22.20 · 마지막 아침</small> <a class="rcpt" href="receipts/food-12-broom44.jpg" target="_blank" rel="noopener">🧾영수증</a></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩36,719</td></tr>
+        <tr class="subtotal"><td colspan="2">식비·기타 소계</td><td class="amt">₩657,118</td></tr>
+
+        <tr class="final">
+          <td colspan="2">🎯 공동경비 총액 (숙소+입장권+교통+식비)</td>
+          <td class="amt">₩2,709,601</td>
+        </tr>
+      </table>
+      <div class="memo">
+        <b>☝️ 안내</b>  <b>모든 비용은 내가 선결제/현장결제</b>했으므로, 팀장님은 위 공동경비의 <b>정확히 절반</b>을 내게 갚으면 됩니다. 개인 쇼핑은 각자 부담으로 제외(자그레브 M-Centar €130 카드전표는 항목 불명 → 공동경비 미포함). 유로 환산은 카드 실효환율 <b>1€≈₩1,654</b> 적용. <b>렌터카(€416.98 AMEX 실결제)·유류(€33.61)·통행료 3건(€18.30)·비네트(€16) 전부 영수증 확정 반영</b> — 예상치 없음.
+      </div>
+    </div>
+
+    <div class="settle-final" style="margin-top:14px;padding:14px 16px;background:#f0f5ff;border:1px solid var(--si);border-radius:10px;font-size:13.5px;line-height:1.7;">
+      <div style="font-weight:800;color:var(--si);margin-bottom:6px;">📝 정산 최종 집계 <span style="font-size:12px;color:var(--muted);font-weight:600;">· 내가 전부 결제 → 팀장님이 절반 상환</span></div>
+      <table style="width:100%;margin-top:4px;font-size:13px;">
+        <tr><td style="font-weight:700;">공동경비 총액 (2인)</td><td style="text-align:right;font-weight:800;">₩2,709,601</td></tr>
+        <tr><td style="font-weight:700;color:var(--accent);">÷ 2 (팀장님 몫)</td><td style="text-align:right;font-weight:800;color:var(--accent);">₩1,354,800</td></tr>
+        <tr><td style="padding-top:4px;color:var(--muted);">내 몫 (참고)</td><td style="text-align:right;padding-top:4px;color:var(--muted);font-weight:700;">₩1,354,800</td></tr>
+      </table>
+      <div style="margin-top:10px;padding:12px;background:#fff;border:2px solid var(--hr);border-radius:8px;text-align:center;font-size:15px;font-weight:800;color:var(--hr);">
+        💸 최종: 팀장님이 내게 <span style="font-size:20px;">₩1,354,800</span> 정산
+      </div>
+      <div style="margin-top:8px;padding-top:8px;border-top:1px dashed var(--si);font-size:12.5px;color:var(--muted);line-height:1.6;">
+        · 숙소 4박(₩974,676) + 입장권(₩275,799) + 교통(₩802,008 · 렌터카·유류·통행료·비네트 전부 영수증 확정) + 식비·기타(₩657,118 · 9/15 마지막 아침 포함)를 <b>전부 내가 결제</b>.<br>
+        · 공동경비 총액 ₩2,709,601 ÷ 2 = <b>팀장님이 내게 ₩1,354,800 상환</b>.<br>
+        · 🚗 <b>렌터카 €416.98(AMEX 실결제·RA-RO-5743)·유류 €33.61(20.08L)·통행료 3건(BINA €10 + HAC Ogulin→Rijeka €7.20 + Rupa €1.10)·슬로베니아 e-비네트 €16.00(주간권 2A·DARS) 전부 영수증 확정</b> — 더 이상 예상치 없음.<br>
+        · 🍽️ 식비·마트·주차 영수증 실치 반영(9/12 플리트비체 저녁·9/13 포스토이나·9/14 류블랴나 조식/자그레브 저녁 신규 추가) — 플리트비체 숙소는 €226.60 실결제(35% 할인).<br>
+        · 🌅 <b>9/14 새벽 블레드 호수 왕복(≈108km)</b> 다녀옴 → 총 운전 ~850km.<br>
+        · 유로 환산은 카드 실효환율 1€≈₩1,654 적용.
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- 시간대별(날짜별) 정산 -->
+  <div class="card">
+    <h2 class="si"><span class="bar"></span>🗓️ 시간대별 정산 <span style="font-size:13px;color:var(--muted);font-weight:600;">· 날짜별 발생 공동경비 (전부 내가 결제)</span></h2>
+
+    <style>
+      .settle.daily td.amt,.settle.daily th:nth-child(2),.settle.daily th:nth-child(3){white-space:nowrap;width:22%;min-width:78px;font-size:12.8px;}
+      .settle.daily td:first-child{width:56%;}
+      @media(max-width:560px){.settle.daily td,.settle.daily th{padding:8px 4px;font-size:12px;} .settle.daily td.amt{min-width:70px;font-size:11.5px;}}
+    </style>
+    <div class="settle daily">
+      <table>
+        <tr>
+          <th style="width:56%;">날짜 · 항목</th>
+          <th style="text-align:right;">전체 (2인)</th>
+          <th style="text-align:right;">1인당</th>
+        </tr>
+
+        <tr><td class="cat" colspan="3">📅 9/11 (금) · 로빈</td></tr>
+        <tr><td>🏨 로빈 Apartments Irena <small style="color:var(--muted);">€130.00</small></td><td class="amt">₩215,020</td><td class="amt">₩107,510</td></tr>
+        <tr><td>🍽️ Pizzeria Leone 2 (저녁) <small style="color:var(--muted);">€26.00</small></td><td class="amt">₩43,004</td><td class="amt">₩21,502</td></tr>
+        <tr><td>🛒 TOMMY 마트 (장보기) <small style="color:var(--muted);">€11.09</small></td><td class="amt">₩18,343</td><td class="amt">₩9,172</td></tr>
+        <tr class="subtotal"><td>9/11 소계</td><td class="amt">₩276,367</td><td class="amt">₩138,184</td></tr>
+
+        <tr><td class="cat" colspan="3">📅 9/12 (토) · 로빈→플리트비체 (렌터카 픽업)</td></tr>
+        <tr><td>🏨 Hotel Jezero <small style="color:var(--muted);">€226.60 · 35%할인 실결제</small></td><td class="amt">₩374,796</td><td class="amt">₩187,398</td></tr>
+        <tr><td>🎟️ 플리트비체 입장권 <small style="color:var(--muted);">€50.00</small></td><td class="amt">₩91,799</td><td class="amt">₩45,900</td></tr>
+        <tr><td>🚗 Enterprise 렌터카 3일 <small style="color:var(--muted);">€416.98 · AMEX 실결제</small></td><td class="amt">₩689,685</td><td class="amt">₩344,842</td></tr>
+        <tr><td>🛣️ BINA Istra 통행료 <small style="color:var(--muted);">€10.00 · Kanfanar→Učka</small></td><td class="amt">₩16,540</td><td class="amt">₩8,270</td></tr>
+        <tr><td>🍽️ 플리트비체 Restoran Poljana (저녁) <small style="color:var(--muted);">€49.50</small></td><td class="amt">₩81,873</td><td class="amt">₩40,937</td></tr>
+        <tr class="subtotal"><td>9/12 소계</td><td class="amt">₩1,254,693</td><td class="amt">₩627,346</td></tr>
+
+        <tr><td class="cat" colspan="3">📅 9/13 (일) · 플리트비체→포스토이나→류블랴나</td></tr>
+        <tr><td>🎟️ 포스토이나+프레드야마 입장권 <small style="color:var(--muted);">€102.80</small></td><td class="amt">₩184,000</td><td class="amt">₩92,000</td></tr>
+        <tr><td>🏨 류블랴나 Boutique Apartments <small style="color:var(--muted);">€134.95</small></td><td class="amt">₩223,182</td><td class="amt">₩111,591</td></tr>
+        <tr><td>☕ Ostarije 커피 Stari Most <small style="color:var(--muted);">€3.40</small></td><td class="amt">₩5,624</td><td class="amt">₩2,812</td></tr>
+        <tr><td>🍽️ 중식당 Makao 포스토이나 (점심) <small style="color:var(--muted);">€27.20</small></td><td class="amt">₩44,989</td><td class="amt">₩22,495</td></tr>
+        <tr><td>🍦 포스토이나 Bistro 아이스크림 <small style="color:var(--muted);">€5.00</small></td><td class="amt">₩8,270</td><td class="amt">₩4,135</td></tr>
+        <tr><td>🛣️ HAC 통행료 Ogulin→Rijeka <small style="color:var(--muted);">€7.20</small></td><td class="amt">₩11,909</td><td class="amt">₩5,954</td></tr>
+        <tr><td>🛣️ HAC 통행료 Rupa 국경 <small style="color:var(--muted);">€1.10</small></td><td class="amt">₩1,819</td><td class="amt">₩910</td></tr>
+        <tr><td>🍽️ The Salon 류블랴나 (저녁) <small style="color:var(--muted);">€82.00</small></td><td class="amt">₩135,628</td><td class="amt">₩67,814</td></tr>
+        <tr><td>🅿️ Zaka Bled 주차 <small style="color:var(--muted);">€22.50</small></td><td class="amt">₩37,215</td><td class="amt">₩18,608</td></tr>
+        <tr><td>🍺 Bar Lepa Vida 류블랴나 <small style="color:var(--muted);">€10.80</small></td><td class="amt">₩17,863</td><td class="amt">₩8,932</td></tr>
+        <tr class="subtotal"><td>9/13 소계</td><td class="amt">₩670,499</td><td class="amt">₩335,250</td></tr>
+
+        <tr><td class="cat" colspan="3">📅 9/14 (월) · 🌅블레드(새벽)→류블랴나→자그레브 (렌터카 반납)</td></tr>
+        <tr><td>🏨 자그레브 아파트먼트 캅톨 <small style="color:var(--muted);">€97.75</small></td><td class="amt">₩161,678</td><td class="amt">₩80,839</td></tr>
+        <tr><td>⛽ Petrol 주유 류블랴나 <small style="color:var(--muted);">€33.61 · 20.08L</small></td><td class="amt">₩55,591</td><td class="amt">₩27,796</td></tr>
+        <tr><td>🍳 류블랴나 Slovenska hiša (조식) <small style="color:var(--muted);">€33.80</small></td><td class="amt">₩55,905</td><td class="amt">₩27,953</td></tr>
+        <tr><td>🅿️ 류블랴나 Kongresni trg 주차 <small style="color:var(--muted);">€4.00</small></td><td class="amt">₩6,616</td><td class="amt">₩3,308</td></tr>
+        <tr><td>🍽️ 자그레브 Taste of Balkan (저녁) <small style="color:var(--muted);">€70.00</small></td><td class="amt">₩115,780</td><td class="amt">₩57,890</td></tr>
+        <tr><td>🍺 자그레브 Pivnica Mali Medo <small style="color:var(--muted);">€29.80</small></td><td class="amt">₩49,289</td><td class="amt">₩24,645</td></tr>
+        <tr class="subtotal"><td>9/14 소계</td><td class="amt">₩444,859</td><td class="amt">₩222,430</td></tr>
+
+        <tr><td class="cat" colspan="3">📅 9/15 (화) · 자그레브 · 출국일</td></tr>
+        <tr><td>☕ 자그레브 Broom 44 카페 조식 <small style="color:var(--muted);">€22.20 · 마지막 아침</small></td><td class="amt">₩36,719</td><td class="amt">₩18,360</td></tr>
+        <tr class="subtotal"><td>9/15 소계</td><td class="amt">₩36,719</td><td class="amt">₩18,360</td></tr>
+
+        <tr><td class="cat" colspan="3">🛣️ 전 구간 공통 (영수증 확정)</td></tr>
+        <tr><td>🎟️ 슬로베니아 e-비네트 (주간권 2A · 9/13) <small style="color:var(--muted);">€16.00 · DARS 영수증</small></td><td class="amt">₩26,464</td><td class="amt">₩13,232</td></tr>
+        <tr class="subtotal"><td>공통 소계</td><td class="amt">₩26,464</td><td class="amt">₩13,232</td></tr>
+
+        <tr class="final">
+          <td>🎯 공동경비 총액 (전 기간)</td>
+          <td class="amt">₩2,709,601</td>
+          <td class="amt">₩1,354,800</td>
+        </tr>
+      </table>
+      <div class="memo">
+        <b>☝️ 날짜별 안내</b>  렌터카 3일(9/12~14) 비용은 <b>픽업일(9/12)에 일괄 계상</b>했어. 유류(€33.61)는 실제 주유일(9/14)에, 통행료·비네트(€16 주간권)는 발생일에 반영. 비네트는 전 구간 사용이라 공통으로 분리. 모든 금액은 <b>내가 결제</b> → 각 날짜 "1인당" 금액이 팀장님이 그날치로 갚을 몫이야. 합산하면 <b>팀장님 총 상환액 ₩1,354,800</b>. (9/12 플리트비체 저녁·9/13 포스토이나 간식·9/14 류블랴나 조식·자그레브 저녁·9/15 마지막 아침 등 영수증 전부 반영)
+      </div>
+    </div>
+
+    <div class="settle-final" style="margin-top:14px;padding:14px 16px;background:#eefaf5;border:1px solid var(--accent);border-radius:10px;font-size:13.5px;line-height:1.7;">
+      <div style="font-weight:800;color:var(--accent);margin-bottom:6px;">📊 날짜별 팀장님 상환액 요약</div>
+      <table style="width:100%;margin-top:4px;font-size:13px;">
+        <tr><td>9/11 로빈 <small style="color:var(--muted);">(숙소+식비)</small></td><td style="text-align:right;font-weight:700;">₩138,184</td></tr>
+        <tr><td>9/12 로빈→플리트비체 <small style="color:var(--muted);">(렌터카·통행료·저녁)</small></td><td style="text-align:right;font-weight:700;">₩627,346</td></tr>
+        <tr><td>9/13 포스토이나·류블랴나 <small style="color:var(--muted);">(입장권·식비·통행료)</small></td><td style="text-align:right;font-weight:700;">₩335,250</td></tr>
+        <tr><td>9/14 🌅블레드·류블랴나·자그레브 <small style="color:var(--muted);">(유류·식비 포함)</small></td><td style="text-align:right;font-weight:700;">₩222,430</td></tr>
+        <tr><td>9/15 자그레브 <small style="color:var(--muted);">(마지막 아침)</small></td><td style="text-align:right;font-weight:700;">₩18,360</td></tr>
+        <tr><td>공통(비네트 €16 확정)</td><td style="text-align:right;font-weight:700;">₩13,232</td></tr>
+      </table>
+      <div style="margin-top:10px;padding:12px;background:#fff;border:2px solid var(--hr);border-radius:8px;text-align:center;font-size:15px;font-weight:800;color:var(--hr);">
+        💸 팀장님 총 상환액 <span style="font-size:20px;">₩1,354,800</span>
+      </div>
+    </div>
+  </div>
+
+
 
   <!-- 확정 예약 요약 -->
   <div class="booked-banner">
@@ -286,8 +468,8 @@
     <h2><span class="bar" style="background:var(--accent);"></span>🚗 렌터카 실결제 완료 <span style="font-size:12px;background:#eefaf5;color:var(--accent);font-weight:800;padding:2px 8px;border-radius:6px;">Enterprise €416.98 ✅</span></h2>
 
     <div class="booked-banner" style="margin-top:0;">
-      <h3>🎫 Enterprise Rent-A-Car · 확인번호 **********</h3>
-      <div>드라이버 <b>DOSUNG KIM</b> · <b>실결제 완료 ✅</b> · 실결제 총액 <span class="amt">€416.98</span> <span style="font-size:13px;color:var(--muted);">(AMEX ****#### · 9/12 09:08 Rovinj 카운터)</span></div>
+      <h3>🎫 Enterprise Rent-A-Car · 확인번호 1396741276</h3>
+      <div>드라이버 <b>DOSUNG KIM</b> · <b>실결제 완료 ✅</b> · 실결제 총액 <span class="amt">€416.98</span> <span style="font-size:13px;color:var(--muted);">(AMEX ****7994 · 9/12 09:08 Rovinj 카운터)</span></div>
     </div>
 
     <div class="flight" style="margin-top:14px;">
@@ -305,7 +487,7 @@
 
     <div class="settle" style="margin-top:14px;">
       <table>
-        <tr><th>항목 (실계약 RA-RO-****)</th><th style="text-align:right;">금액(Net)</th></tr>
+        <tr><th>항목 (실계약 RA-RO-5743)</th><th style="text-align:right;">금액(Net)</th></tr>
         <tr><td>차량</td><td class="amt">Renault Captur AT (Group F2) · 가솔린 · PU 1236-F</td></tr>
         <tr><td>TMI — 차량 렌탈 (3일 × €60.66)</td><td class="amt">€181.98</td></tr>
         <tr><td>ONE — 원웨이 반납료</td><td class="amt">€64.00</td></tr>
@@ -315,9 +497,9 @@
         <tr><td>주행거리</td><td class="amt">무제한 (Unlimited)</td></tr>
         <tr class="subtotal"><td>Net 소계</td><td class="amt">€333.58</td></tr>
         <tr><td>VAT (25.0%)</td><td class="amt">€83.40</td></tr>
-        <tr class="final"><td>실결제 총액 (AMEX ****#### · 9/12 09:08)</td><td class="amt">€416.98</td></tr>
+        <tr class="final"><td>실결제 총액 (AMEX ****7994 · 9/12 09:08)</td><td class="amt">€416.98</td></tr>
       </table>
-      <div class="memo"><b>※</b> Auto Benussi(Enterprise) Rovinj 카운터 실결제 · 예치금 €200 별도 홀드(해제) · 계약 RA-RO-**** / 인보이스 ROI#### · 주행거리 미계량(무제한) · <b>추가 주유비 청구 없음</b> (체크인 연료란 공란이나 사후 청구 없음 확인) · $483.20은 예상 환산치였고 실결제는 €416.98 확정</div>
+      <div class="memo"><b>※</b> Auto Benussi(Enterprise) Rovinj 카운터 실결제 · 예치금 €200 별도 홀드(해제) · 계약 RA-RO-5743 / 인보이스 ROI6919 · 주행거리 미계량(무제한) · <b>추가 주유비 청구 없음</b> (체크인 연료란 공란이나 사후 청구 없음 확인) · $483.20은 예상 환산치였고 실결제는 €416.98 확정</div>
     </div>
 
     <div style="margin-top:14px;padding:12px 14px;background:#eefaf5;border:2px solid var(--accent);border-radius:10px;font-size:13px;line-height:1.65;color:var(--ink);">
@@ -384,7 +566,7 @@
         <tr><td>👨‍💼 Vision Travel — Igor Ćebetarević</td><td class="amt"><a href="tel:+385917815251">+385 91 781 5251</a></td></tr>
         <tr><td>✉️ Infobip Vision 문의</td><td class="amt"><a href="mailto:vision@infobip.com">vision@infobip.com</a></td></tr>
         <tr><td>👩‍💼 Erin Ko (Infobip 담당)</td><td class="amt"><a href="tel:+821076081459">+82 10 7608 1459</a></td></tr>
-        <tr><td>🏨 로빈 숙소 (Irena) 예약</td><td class="amt">********** / PIN ****</td></tr>
+        <tr><td>🏨 로빈 숙소 (Irena) 예약</td><td class="amt">6874099916 / PIN 7262</td></tr>
         <tr><td>🆘 응급 (크로아티아·유럽 공통)</td><td class="amt">112</td></tr>
       </table>
       <div class="memo"><b>※ Greenway 차량 지연 시</b> Milana 또는 Igor에게 즉시 연락 · 예약카드·여권은 항상 소지</div>
@@ -396,7 +578,6 @@
       <li>🇭🇷 플리트비체 · <b>Hotel Jezero</b> · 53231 Plitvička Jezera · <a href="https://maps.google.com/?q=Hotel+Jezero+Plitvice" target="_blank">지도</a></li>
       <li>🇸🇮 류블랴나 · <b>Boutique Apartments</b> · 시내 · <a href="https://maps.google.com/?q=Ljubljana+city+center" target="_blank">지도</a></li>
       <li>🇭🇷 자그레브 · <b>아파트먼트 캅톨 (Apartman Kaptol)</b> · 도심 · <a href="https://maps.google.com/?q=Kaptol+Zagreb" target="_blank">지도</a></li>
-      <li style="color:#c8102e;">※ 예약번호·PIN·티켓번호·카드/계약번호·개인 예약연락처는 공개본에서 마스킹됨 (원본은 개인 소장본 참조)</li>
     </div>
   </div>
 
@@ -547,7 +728,7 @@
       </ul>
       <div style="margin-top:8px;padding:8px 10px;background:#fff0f0;border:1px dashed var(--hr);border-radius:8px;font-size:12px;color:var(--ink);line-height:1.55;">
         ⚠️ <b>사전 처리 필요:</b><br>
-        ① <b>렌터카 예약 확정</b> (Enterprise ********** · 9/12 09:00 Rovinj 픽업 → 9/14 18:00 Zagreb Downtown 반납) · <span style="color:var(--accent);font-weight:700;">9/11은 렌트 안 하고 로빈 1박 · 계획대로 진행</span><br>
+        ① <b>렌터카 예약 확정</b> (Enterprise 1396741276 · 9/12 09:00 Rovinj 픽업 → 9/14 18:00 Zagreb Downtown 반납) · <span style="color:var(--accent);font-weight:700;">9/11은 렌트 안 하고 로빈 1박 · 계획대로 진행</span><br>
         ② 출장 짐을 행사 버스에 실을 수 있는지 Infobip Vision 측 확인<br>
         ③ 버스 기사에게 로빈 하차 의사 사전 전달 (vision@infobip.com or Milana +385993123678)<br>
         ④ 로빈 숙소(Apartments Irena)에 늦은 도착 가능성 사전 고지
@@ -680,7 +861,7 @@
     </div>
 
     <div class="must">
-      ⭐ <b>준비물:</b> 편한 운동화(젖을 수 있음) · 얇은 겉옷(오후 서늘함) · 물병 · 카메라 · <b>입장권 e-티켓 모바일 저장</b> (*********** / ***********)
+      ⭐ <b>준비물:</b> 편한 운동화(젖을 수 있음) · 얇은 겉옷(오후 서늘함) · 물병 · 카메라 · <b>입장권 e-티켓 모바일 저장</b> (26188159086 / 26511185486)
     </div>
   </div>
 
@@ -755,7 +936,7 @@
           Sebastiano Schiavone 1, 52210 Rovinj<br>
           2베드룸 · 무료전용주차 · 평점 9.4<br>
           체크인 <b>9/11(금) 15:00~20:00</b> · 체크아웃 9/12(토) 07:00~10:00<br>
-          <b>₩212,519</b> · 예약번호 <b>**********</b> / PIN <b>****</b>
+          <b>₩212,519</b> · 예약번호 <b>6874099916</b> / PIN <b>7262</b>
         </div>
       </div>
 
@@ -798,179 +979,6 @@
     </div>
   </div>
 
-  <!-- 1인당 비용 정산 -->
-  <div class="card">
-    <h2><span class="bar"></span>🧾 1인당 비용 정산 <span style="font-size:13px;color:var(--muted);font-weight:600;">· 2인 공동경비 ÷ 2</span></h2>
-
-    <div class="settle">
-      <table>
-        <tr>
-          <th style="width:52%;">항목</th>
-          <th style="width:16%;text-align:center;">결제자</th>
-          <th style="text-align:right;">전체 (2인)</th>
-        </tr>
-
-        <tr><td class="cat" colspan="3">🏨 숙소 4박 — 전부 내가 결제 (영수증 실치)</td></tr>
-        <tr><td>로빈 Apartments Irena (9/11) <small style="color:var(--muted);">€130.00 · 현지결제</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩215,020</td></tr>
-        <tr><td>플리트비체 Hotel Jezero (9/12) <small style="color:var(--muted);">€226.60 · 숙소청구(35%할인 실결제)</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩374,796</td></tr>
-        <tr><td>류블랴나 Boutique Apartments (9/13) <small style="color:var(--muted);">€134.95 · 선결제</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩223,182</td></tr>
-        <tr><td>자그레브 아파트먼트 캅톨 (9/14) <small style="color:var(--muted);">€97.75 · 선결제</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩161,678</td></tr>
-        <tr class="subtotal"><td colspan="2">숙소 소계</td><td class="amt">₩974,676</td></tr>
-
-        <tr><td class="cat" colspan="3">🎟️ 입장권 — 전부 내가 결제 (카드청구 확정)</td></tr>
-        <tr><td>플리트비체 입장권 (성인 2명) <small style="color:var(--muted);">€50.00</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩91,799</td></tr>
-        <tr><td>포스토이나 동굴 + 프레드야마 성 (성인 2명) <small style="color:var(--muted);">€102.80</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩184,000</td></tr>
-        <tr class="subtotal"><td colspan="2">입장권 소계</td><td class="amt">₩275,799</td></tr>
-
-        <tr><td class="cat" colspan="3">🚗 교통 — 렌터카·유류·통행료·비네트 전부 영수증 확정 · 내가 결제</td></tr>
-        <tr><td>Enterprise 렌터카 3일 (Rovinj→Zagreb 원웨이) <small style="color:var(--muted);">€416.98 · AMEX 실결제</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩689,685</td></tr>
-        <tr><td>Petrol 주유 · 류블랴나 Šmartinska (9/14) <small style="color:var(--muted);">€33.61 · 20.08L · 영수증</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩55,591</td></tr>
-        <tr><td>BINA Istra 통행료 (Kanfanar→Učka, 9/12) <small style="color:var(--muted);">€10.00 · 영수증</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩16,540</td></tr>
-        <tr><td>HAC 통행료 Ogulin→Rijeka (9/13) <small style="color:var(--muted);">€7.20 · 영수증</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩11,909</td></tr>
-        <tr><td>HAC 통행료 Rupa 국경 (9/13) <small style="color:var(--muted);">€1.10 · 영수증</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩1,819</td></tr>
-        <tr><td>슬로베니아 e-비네트 (주간권 2A · 9/13) <small style="color:var(--muted);">€16.00 · DARS 영수증</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩26,464</td></tr>
-        <tr class="subtotal"><td colspan="2">교통 소계</td><td class="amt">₩802,008</td></tr>
-
-        <tr><td class="cat" colspan="3">🍽️ 식비·마트·주차 — 현장 결제 (영수증 실치)</td></tr>
-        <tr><td>로빈 Pizzeria Leone (9/11 저녁) <small style="color:var(--muted);">€26.00</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩43,004</td></tr>
-        <tr><td>로빈 TOMMY 마트 (9/11) <small style="color:var(--muted);">€11.09</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩18,343</td></tr>
-        <tr><td>플리트비체 Restoran Poljana (9/12 저녁) <small style="color:var(--muted);">€49.50</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩81,873</td></tr>
-        <tr><td>중식당 Makao · 포스토이나 (9/13 점심) <small style="color:var(--muted);">€27.20</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩44,989</td></tr>
-        <tr><td>포스토이나 Bistro 아이스크림 (9/13) <small style="color:var(--muted);">€5.00</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩8,270</td></tr>
-        <tr><td>Ostarije 커피 Stari Most (9/13) <small style="color:var(--muted);">€3.40</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩5,624</td></tr>
-        <tr><td>The Salon · 류블랴나 저녁 (9/13) <small style="color:var(--muted);">€82.00</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩135,628</td></tr>
-        <tr><td>Bar Lepa Vida · 류블랴나 (9/13) <small style="color:var(--muted);">€10.80</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩17,863</td></tr>
-        <tr><td>Zaka Bled 주차 (9/13) <small style="color:var(--muted);">€22.50</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩37,215</td></tr>
-        <tr><td>류블랴나 Slovenska hiša 조식 (9/14) <small style="color:var(--muted);">€33.80</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩55,905</td></tr>
-        <tr><td>류블랴나 Kongresni trg 주차 (9/14) <small style="color:var(--muted);">€4.00</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩6,616</td></tr>
-        <tr><td>자그레브 Taste of Balkan 저녁 (9/14) <small style="color:var(--muted);">€70.00</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩115,780</td></tr>
-        <tr><td>자그레브 Pivnica Mali Medo (9/14) <small style="color:var(--muted);">€29.80</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩49,289</td></tr>
-        <tr><td>자그레브 Broom 44 카페 조식 (9/15) <small style="color:var(--muted);">€22.20 · 마지막 아침</small></td><td style="text-align:center;font-size:11.5px;color:var(--hr);font-weight:700;">나</td><td class="amt">₩36,719</td></tr>
-        <tr class="subtotal"><td colspan="2">식비·기타 소계</td><td class="amt">₩657,118</td></tr>
-
-        <tr class="final">
-          <td colspan="2">🎯 공동경비 총액 (숙소+입장권+교통+식비)</td>
-          <td class="amt">₩2,709,601</td>
-        </tr>
-      </table>
-      <div class="memo">
-        <b>☝️ 안내</b>  <b>모든 비용은 내가 선결제/현장결제</b>했으므로, 팀장님은 위 공동경비의 <b>정확히 절반</b>을 내게 갚으면 됩니다. 개인 쇼핑은 각자 부담으로 제외(자그레브 M-Centar €130 카드전표는 항목 불명 → 공동경비 미포함). 유로 환산은 카드 실효환율 <b>1€≈₩1,654</b> 적용. <b>렌터카(€416.98 AMEX 실결제)·유류(€33.61)·통행료 3건(€18.30)·비네트(€16) 전부 영수증 확정 반영</b> — 예상치 없음.
-      </div>
-    </div>
-
-    <div class="settle-final" style="margin-top:14px;padding:14px 16px;background:#f0f5ff;border:1px solid var(--si);border-radius:10px;font-size:13.5px;line-height:1.7;">
-      <div style="font-weight:800;color:var(--si);margin-bottom:6px;">📝 정산 최종 집계 <span style="font-size:12px;color:var(--muted);font-weight:600;">· 내가 전부 결제 → 팀장님이 절반 상환</span></div>
-      <table style="width:100%;margin-top:4px;font-size:13px;">
-        <tr><td style="font-weight:700;">공동경비 총액 (2인)</td><td style="text-align:right;font-weight:800;">₩2,709,601</td></tr>
-        <tr><td style="font-weight:700;color:var(--accent);">÷ 2 (팀장님 몫)</td><td style="text-align:right;font-weight:800;color:var(--accent);">₩1,354,800</td></tr>
-        <tr><td style="padding-top:4px;color:var(--muted);">내 몫 (참고)</td><td style="text-align:right;padding-top:4px;color:var(--muted);font-weight:700;">₩1,354,800</td></tr>
-      </table>
-      <div style="margin-top:10px;padding:12px;background:#fff;border:2px solid var(--hr);border-radius:8px;text-align:center;font-size:15px;font-weight:800;color:var(--hr);">
-        💸 최종: 팀장님이 내게 <span style="font-size:20px;">₩1,354,800</span> 정산
-      </div>
-      <div style="margin-top:8px;padding-top:8px;border-top:1px dashed var(--si);font-size:12.5px;color:var(--muted);line-height:1.6;">
-        · 숙소 4박(₩974,676) + 입장권(₩275,799) + 교통(₩802,008 · 렌터카·유류·통행료·비네트 전부 영수증 확정) + 식비·기타(₩657,118 · 9/15 마지막 아침 포함)를 <b>전부 내가 결제</b>.<br>
-        · 공동경비 총액 ₩2,709,601 ÷ 2 = <b>팀장님이 내게 ₩1,354,800 상환</b>.<br>
-        · 🚗 <b>렌터카 €416.98(AMEX 실결제·RA-RO-****)·유류 €33.61(20.08L)·통행료 3건(BINA €10 + HAC Ogulin→Rijeka €7.20 + Rupa €1.10)·슬로베니아 e-비네트 €16.00(주간권 2A·DARS) 전부 영수증 확정</b> — 더 이상 예상치 없음.<br>
-        · 🍽️ 식비·마트·주차 영수증 실치 반영(9/12 플리트비체 저녁·9/13 포스토이나·9/14 류블랴나 조식/자그레브 저녁 신규 추가) — 플리트비체 숙소는 €226.60 실결제(35% 할인).<br>
-        · 🌅 <b>9/14 새벽 블레드 호수 왕복(≈108km)</b> 다녀옴 → 총 운전 ~850km.<br>
-        · 유로 환산은 카드 실효환율 1€≈₩1,654 적용.
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <!-- 시간대별(날짜별) 정산 -->
-  <div class="card">
-    <h2 class="si"><span class="bar"></span>🗓️ 시간대별 정산 <span style="font-size:13px;color:var(--muted);font-weight:600;">· 날짜별 발생 공동경비 (전부 내가 결제)</span></h2>
-
-    <style>
-      .settle.daily td.amt,.settle.daily th:nth-child(2),.settle.daily th:nth-child(3){white-space:nowrap;width:22%;min-width:78px;font-size:12.8px;}
-      .settle.daily td:first-child{width:56%;}
-      @media(max-width:560px){.settle.daily td,.settle.daily th{padding:8px 4px;font-size:12px;} .settle.daily td.amt{min-width:70px;font-size:11.5px;}}
-    </style>
-    <div class="settle daily">
-      <table>
-        <tr>
-          <th style="width:56%;">날짜 · 항목</th>
-          <th style="text-align:right;">전체 (2인)</th>
-          <th style="text-align:right;">1인당</th>
-        </tr>
-
-        <tr><td class="cat" colspan="3">📅 9/11 (금) · 로빈</td></tr>
-        <tr><td>🏨 로빈 Apartments Irena <small style="color:var(--muted);">€130.00</small></td><td class="amt">₩215,020</td><td class="amt">₩107,510</td></tr>
-        <tr><td>🍽️ Pizzeria Leone 2 (저녁) <small style="color:var(--muted);">€26.00</small></td><td class="amt">₩43,004</td><td class="amt">₩21,502</td></tr>
-        <tr><td>🛒 TOMMY 마트 (장보기) <small style="color:var(--muted);">€11.09</small></td><td class="amt">₩18,343</td><td class="amt">₩9,172</td></tr>
-        <tr class="subtotal"><td>9/11 소계</td><td class="amt">₩276,367</td><td class="amt">₩138,184</td></tr>
-
-        <tr><td class="cat" colspan="3">📅 9/12 (토) · 로빈→플리트비체 (렌터카 픽업)</td></tr>
-        <tr><td>🏨 Hotel Jezero <small style="color:var(--muted);">€226.60 · 35%할인 실결제</small></td><td class="amt">₩374,796</td><td class="amt">₩187,398</td></tr>
-        <tr><td>🎟️ 플리트비체 입장권 <small style="color:var(--muted);">€50.00</small></td><td class="amt">₩91,799</td><td class="amt">₩45,900</td></tr>
-        <tr><td>🚗 Enterprise 렌터카 3일 <small style="color:var(--muted);">€416.98 · AMEX 실결제</small></td><td class="amt">₩689,685</td><td class="amt">₩344,842</td></tr>
-        <tr><td>🛣️ BINA Istra 통행료 <small style="color:var(--muted);">€10.00 · Kanfanar→Učka</small></td><td class="amt">₩16,540</td><td class="amt">₩8,270</td></tr>
-        <tr><td>🍽️ 플리트비체 Restoran Poljana (저녁) <small style="color:var(--muted);">€49.50</small></td><td class="amt">₩81,873</td><td class="amt">₩40,937</td></tr>
-        <tr class="subtotal"><td>9/12 소계</td><td class="amt">₩1,254,693</td><td class="amt">₩627,346</td></tr>
-
-        <tr><td class="cat" colspan="3">📅 9/13 (일) · 플리트비체→포스토이나→류블랴나</td></tr>
-        <tr><td>🎟️ 포스토이나+프레드야마 입장권 <small style="color:var(--muted);">€102.80</small></td><td class="amt">₩184,000</td><td class="amt">₩92,000</td></tr>
-        <tr><td>🏨 류블랴나 Boutique Apartments <small style="color:var(--muted);">€134.95</small></td><td class="amt">₩223,182</td><td class="amt">₩111,591</td></tr>
-        <tr><td>☕ Ostarije 커피 Stari Most <small style="color:var(--muted);">€3.40</small></td><td class="amt">₩5,624</td><td class="amt">₩2,812</td></tr>
-        <tr><td>🍽️ 중식당 Makao 포스토이나 (점심) <small style="color:var(--muted);">€27.20</small></td><td class="amt">₩44,989</td><td class="amt">₩22,495</td></tr>
-        <tr><td>🍦 포스토이나 Bistro 아이스크림 <small style="color:var(--muted);">€5.00</small></td><td class="amt">₩8,270</td><td class="amt">₩4,135</td></tr>
-        <tr><td>🛣️ HAC 통행료 Ogulin→Rijeka <small style="color:var(--muted);">€7.20</small></td><td class="amt">₩11,909</td><td class="amt">₩5,954</td></tr>
-        <tr><td>🛣️ HAC 통행료 Rupa 국경 <small style="color:var(--muted);">€1.10</small></td><td class="amt">₩1,819</td><td class="amt">₩910</td></tr>
-        <tr><td>🍽️ The Salon 류블랴나 (저녁) <small style="color:var(--muted);">€82.00</small></td><td class="amt">₩135,628</td><td class="amt">₩67,814</td></tr>
-        <tr><td>🅿️ Zaka Bled 주차 <small style="color:var(--muted);">€22.50</small></td><td class="amt">₩37,215</td><td class="amt">₩18,608</td></tr>
-        <tr><td>🍺 Bar Lepa Vida 류블랴나 <small style="color:var(--muted);">€10.80</small></td><td class="amt">₩17,863</td><td class="amt">₩8,932</td></tr>
-        <tr class="subtotal"><td>9/13 소계</td><td class="amt">₩670,499</td><td class="amt">₩335,250</td></tr>
-
-        <tr><td class="cat" colspan="3">📅 9/14 (월) · 🌅블레드(새벽)→류블랴나→자그레브 (렌터카 반납)</td></tr>
-        <tr><td>🏨 자그레브 아파트먼트 캅톨 <small style="color:var(--muted);">€97.75</small></td><td class="amt">₩161,678</td><td class="amt">₩80,839</td></tr>
-        <tr><td>⛽ Petrol 주유 류블랴나 <small style="color:var(--muted);">€33.61 · 20.08L</small></td><td class="amt">₩55,591</td><td class="amt">₩27,796</td></tr>
-        <tr><td>🍳 류블랴나 Slovenska hiša (조식) <small style="color:var(--muted);">€33.80</small></td><td class="amt">₩55,905</td><td class="amt">₩27,953</td></tr>
-        <tr><td>🅿️ 류블랴나 Kongresni trg 주차 <small style="color:var(--muted);">€4.00</small></td><td class="amt">₩6,616</td><td class="amt">₩3,308</td></tr>
-        <tr><td>🍽️ 자그레브 Taste of Balkan (저녁) <small style="color:var(--muted);">€70.00</small></td><td class="amt">₩115,780</td><td class="amt">₩57,890</td></tr>
-        <tr><td>🍺 자그레브 Pivnica Mali Medo <small style="color:var(--muted);">€29.80</small></td><td class="amt">₩49,289</td><td class="amt">₩24,645</td></tr>
-        <tr class="subtotal"><td>9/14 소계</td><td class="amt">₩444,859</td><td class="amt">₩222,430</td></tr>
-
-        <tr><td class="cat" colspan="3">📅 9/15 (화) · 자그레브 · 출국일</td></tr>
-        <tr><td>☕ 자그레브 Broom 44 카페 조식 <small style="color:var(--muted);">€22.20 · 마지막 아침</small></td><td class="amt">₩36,719</td><td class="amt">₩18,360</td></tr>
-        <tr class="subtotal"><td>9/15 소계</td><td class="amt">₩36,719</td><td class="amt">₩18,360</td></tr>
-
-        <tr><td class="cat" colspan="3">🛣️ 전 구간 공통 (영수증 확정)</td></tr>
-        <tr><td>🎟️ 슬로베니아 e-비네트 (주간권 2A · 9/13) <small style="color:var(--muted);">€16.00 · DARS 영수증</small></td><td class="amt">₩26,464</td><td class="amt">₩13,232</td></tr>
-        <tr class="subtotal"><td>공통 소계</td><td class="amt">₩26,464</td><td class="amt">₩13,232</td></tr>
-
-        <tr class="final">
-          <td>🎯 공동경비 총액 (전 기간)</td>
-          <td class="amt">₩2,709,601</td>
-          <td class="amt">₩1,354,800</td>
-        </tr>
-      </table>
-      <div class="memo">
-        <b>☝️ 날짜별 안내</b>  렌터카 3일(9/12~14) 비용은 <b>픽업일(9/12)에 일괄 계상</b>했어. 유류(€33.61)는 실제 주유일(9/14)에, 통행료·비네트(€16 주간권)는 발생일에 반영. 비네트는 전 구간 사용이라 공통으로 분리. 모든 금액은 <b>내가 결제</b> → 각 날짜 "1인당" 금액이 팀장님이 그날치로 갚을 몫이야. 합산하면 <b>팀장님 총 상환액 ₩1,354,800</b>. (9/12 플리트비체 저녁·9/13 포스토이나 간식·9/14 류블랴나 조식·자그레브 저녁·9/15 마지막 아침 등 영수증 전부 반영)
-      </div>
-    </div>
-
-    <div class="settle-final" style="margin-top:14px;padding:14px 16px;background:#eefaf5;border:1px solid var(--accent);border-radius:10px;font-size:13.5px;line-height:1.7;">
-      <div style="font-weight:800;color:var(--accent);margin-bottom:6px;">📊 날짜별 팀장님 상환액 요약</div>
-      <table style="width:100%;margin-top:4px;font-size:13px;">
-        <tr><td>9/11 로빈 <small style="color:var(--muted);">(숙소+식비)</small></td><td style="text-align:right;font-weight:700;">₩138,184</td></tr>
-        <tr><td>9/12 로빈→플리트비체 <small style="color:var(--muted);">(렌터카·통행료·저녁)</small></td><td style="text-align:right;font-weight:700;">₩627,346</td></tr>
-        <tr><td>9/13 포스토이나·류블랴나 <small style="color:var(--muted);">(입장권·식비·통행료)</small></td><td style="text-align:right;font-weight:700;">₩335,250</td></tr>
-        <tr><td>9/14 🌅블레드·류블랴나·자그레브 <small style="color:var(--muted);">(유류·식비 포함)</small></td><td style="text-align:right;font-weight:700;">₩222,430</td></tr>
-        <tr><td>9/15 자그레브 <small style="color:var(--muted);">(마지막 아침)</small></td><td style="text-align:right;font-weight:700;">₩18,360</td></tr>
-        <tr><td>공통(비네트 €16 확정)</td><td style="text-align:right;font-weight:700;">₩13,232</td></tr>
-      </table>
-      <div style="margin-top:10px;padding:12px;background:#fff;border:2px solid var(--hr);border-radius:8px;text-align:center;font-size:15px;font-weight:800;color:var(--hr);">
-        💸 팀장님 총 상환액 <span style="font-size:20px;">₩1,354,800</span>
-      </div>
-    </div>
-  </div>
-
-
   <!-- 예매 확정 요약 -->
   <div class="card">
     <h2><span class="bar"></span>🎫 예매 확정 요약 <span style="font-size:13px;color:var(--muted);font-weight:600;">· 티켓·레스토랑 (숙소 제외)</span></h2>
@@ -994,14 +1002,14 @@
         <td data-label="항목"><b>💧 플리트비체 국립공원 입장권</b><br><small>Entrance 1 (ST1) · Adults after 15h · 1회권</small></td>
         <td data-label="인원/옵션">성인 2명</td>
         <td data-label="결제" style="text-align:right;font-weight:800;color:var(--accent);">€50.00<br><small style="color:var(--muted);font-weight:600;">₩91,799</small></td>
-        <td data-label="예약번호"><small>***********<br>***********</small></td>
+        <td data-label="예약번호"><small>26188159086<br>26511185486</small></td>
       </tr>
       <tr>
         <td class="d" data-label="날짜/시간">9/13 (일)<br>14:00</td>
         <td data-label="항목"><b>🕳️ 포스토이나 동굴 + 프레드야마 성</b><br><small>AV 오디오가이드 포함 · Boarding 13:45</small></td>
         <td data-label="인원/옵션">성인 2명</td>
         <td data-label="결제" style="text-align:right;font-weight:800;color:var(--accent);">€102.80<br><small style="color:var(--muted);font-weight:600;">₩184,000</small></td>
-        <td data-label="예약번호"><small>Order ******<br>WEB-WEB-******</small></td>
+        <td data-label="예약번호"><small>Order 891181<br>WEB-WEB-109941</small></td>
       </tr>
       <tr style="background:#f0faf5;">
         <td colspan="3" data-label="합계"><b>예매 티켓 합계</b></td>
@@ -1033,14 +1041,14 @@
         <div class="cbox"></div>
         <div class="cbody">
           <div class="ctitle">플리트비체 국립공원 입장권 <span class="curgent ok-tag">✅ 예매 완료</span></div>
-          <div class="cmeta"><b>9/12(토) 15:00~16:00 · Entrance 1(ST1) · 성인 2명 (Adults after 15h)</b> · €50.00 (인보이스 확정 · 카드청구 ₩91,799) · 결제일 2026-08-14 · 티켓번호 <b>*********** / ***********</b> · <span style="color:#c8102e;font-weight:700;">규정상 변경·취소 불가 · 1회권</span> · <a href="https://ulaznice.np-plitvicka-jezera.hr/" target="_blank">공식 사이트</a></div>
+          <div class="cmeta"><b>9/12(토) 15:00~16:00 · Entrance 1(ST1) · 성인 2명 (Adults after 15h)</b> · €50.00 (인보이스 확정 · 카드청구 ₩91,799) · 결제일 2026-08-14 · 티켓번호 <b>26188159086 / 26511185486</b> · <span style="color:#c8102e;font-weight:700;">규정상 변경·취소 불가 · 1회권</span> · <a href="https://ulaznice.np-plitvicka-jezera.hr/" target="_blank">공식 사이트</a></div>
         </div>
       </div>
       <div class="check-item done" data-id="c-postojna-ticket">
         <div class="cbox"></div>
         <div class="cbody">
           <div class="ctitle">포스토이나 동굴 + 프레드야마 성 콤보 (AV) <span class="curgent ok-tag">✅ 예매 완료</span></div>
-          <div class="cmeta"><b>9/13(일) 14:00 슬롯 · Boarding 13:45</b> · 성인 2명 · AV 오디오가이드 포함 €102.80 (입장권 €95 + AV €7.80 · 카드청구 ₩184,000) · 주문번호 <b>******</b> · Invoice WEB-WEB-****** · 프레드야마 성 09:00~17:30 개방 · 변경 시 티켓당 €2</div>
+          <div class="cmeta"><b>9/13(일) 14:00 슬롯 · Boarding 13:45</b> · 성인 2명 · AV 오디오가이드 포함 €102.80 (입장권 €95 + AV €7.80 · 카드청구 ₩184,000) · 주문번호 <b>891181</b> · Invoice WEB-WEB-109941 · 프레드야마 성 09:00~17:30 개방 · 변경 시 티켓당 €2</div>
         </div>
       </div>
       <div class="check-item done" data-id="c-puntulina">
@@ -1058,7 +1066,7 @@
         <div class="cbox"></div>
         <div class="cbody">
           <div class="ctitle">렌터카 실결제 완료 <span class="curgent ok-tag">✅ €416.98 결제완료</span></div>
-          <div class="cmeta"><b>확인번호 **********</b> · 픽업 <b>9/12(토) 09:00 Rovinj</b> → 반납 <b>9/14(월) 18:00 Zagreb Downtown(Hotel Westin)</b> · Renault Captur AT(Group F2)·자동·무제한주행 · <b>실결제 €416.98 (AMEX ****#### · 9/12 09:08)</b> · <span style="color:var(--accent);font-weight:700;">※ 9/11은 로빈 1박(렌트 X) · 9/14 자그레브 반납 후 1박 · 9/15 각자 택시로 공항</span></div>
+          <div class="cmeta"><b>확인번호 1396741276</b> · 픽업 <b>9/12(토) 09:00 Rovinj</b> → 반납 <b>9/14(월) 18:00 Zagreb Downtown(Hotel Westin)</b> · Renault Captur AT(Group F2)·자동·무제한주행 · <b>실결제 €416.98 (AMEX ****7994 · 9/12 09:08)</b> · <span style="color:var(--accent);font-weight:700;">※ 9/11은 로빈 1박(렌트 X) · 9/14 자그레브 반납 후 1박 · 9/15 각자 택시로 공항</span></div>
         </div>
       </div>
       <div class="check-item" data-id="c-vision-bus">
@@ -1072,7 +1080,7 @@
         <div class="cbox"></div>
         <div class="cbody">
           <div class="ctitle">슬로베니아 e-비네트 <span class="curgent ok-tag">✅ 구매 완료</span></div>
-          <div class="cmeta"><b>주간권(Tedenska) 2A · €16.00</b> · DARS 온라인 구매 9/13 06:18 · 영수증 W901-02-************ · <a href="https://evinjeta.dars.si/" target="_blank">evinjeta.dars.si</a></div>
+          <div class="cmeta"><b>주간권(Tedenska) 2A · €16.00</b> · DARS 온라인 구매 9/13 06:18 · 영수증 W901-02-691262072680 · <a href="https://evinjeta.dars.si/" target="_blank">evinjeta.dars.si</a></div>
         </div>
       </div>
     </div>
